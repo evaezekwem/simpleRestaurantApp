@@ -19,6 +19,7 @@
 		A6F2D9281F01DA3F004CDD4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2D9271F01DA3F004CDD4B /* User.swift */; };
 		A6F2D92A1F01E152004CDD4B /* Pods_Pizza.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAAF14262ECEE3FFFCE68E0C /* Pods_Pizza.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A6F2D92C1F01E47A004CDD4B /* menuCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2D92B1F01E47A004CDD4B /* menuCategoryViewController.swift */; };
+		A6F2D92E1F01E525004CDD4B /* riceCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2D92D1F01E525004CDD4B /* riceCategoryViewController.swift */; };
 		E4EB50B82FECC9FC5439A6F5 /* Pods_PizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C0A8B94B86B6D7EE212709 /* Pods_PizzaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		4BCCDEC358838B805ABC25BE /* Pods-PizzaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaTests/Pods-PizzaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82CD0774C211ACFBD0150FE5 /* Pods-Pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza/Pods-Pizza.release.xcconfig"; sourceTree = "<group>"; };
 		98C0A8B94B86B6D7EE212709 /* Pods_PizzaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D1CCC41F02037E00AE63AD /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F2D8F31F01D1EE004CDD4B /* Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F2D8F61F01D1EE004CDD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F2D8FD1F01D1EE004CDD4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		A6F2D9241F01D9DD004CDD4B /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		A6F2D9271F01DA3F004CDD4B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A6F2D92B1F01E47A004CDD4B /* menuCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuCategoryViewController.swift; sourceTree = "<group>"; };
+		A6F2D92D1F01E525004CDD4B /* riceCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = riceCategoryViewController.swift; sourceTree = "<group>"; };
 		A831D9607D9FD876954919EC /* Pods-PizzaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaTests/Pods-PizzaTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58BCB4DDB52BDF31FB6AF07 /* Pods-Pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza/Pods-Pizza.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAF14262ECEE3FFFCE68E0C /* Pods_Pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +107,7 @@
 		A6F2D8EA1F01D1EE004CDD4B = {
 			isa = PBXGroup;
 			children = (
+				A6D1CCC41F02037E00AE63AD /* SQLite.framework */,
 				A6F2D8F51F01D1EE004CDD4B /* Pizza */,
 				A6F2D90A1F01D1EE004CDD4B /* PizzaTests */,
 				A6F2D8F41F01D1EE004CDD4B /* Products */,
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				A6F2D92B1F01E47A004CDD4B /* menuCategoryViewController.swift */,
+				A6F2D92D1F01E525004CDD4B /* riceCategoryViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				A6F2D9281F01DA3F004CDD4B /* User.swift in Sources */,
 				A6F2D9251F01D9DD004CDD4B /* Order.swift in Sources */,
 				A6F2D92C1F01E47A004CDD4B /* menuCategoryViewController.swift in Sources */,
+				A6F2D92E1F01E525004CDD4B /* riceCategoryViewController.swift in Sources */,
 				A6F2D8F71F01D1EE004CDD4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

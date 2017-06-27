@@ -7,7 +7,7 @@ import SQLite
 
 //dictionary of menu items separated in categories with each menu item corresponding to its price tag
 let menuList: [String:[String:Int]] = [
-    "rice":["jollof rice":2000, "ofada rice": 2500, "fried rice":3000, "coconunt rice":2800],
+    "rice":["jollof rice":2000, "ofada rice": 2500, "fried rice":3000, "coconut rice":2800],
     "stew":["tomato stew":500, "banga stew":300, "vegetable stew": 200, "sauce stew":900],
     "swallow":["eba":350, "fufu":400, "semo":500, "amala":250],
     "pizza":["lekki pizza":2500, "ikeja pizza":2000, "yaba pizza":1500, "ojuelegba pizza":600],
@@ -16,7 +16,7 @@ let menuList: [String:[String:Int]] = [
 ]
 
 let menuListWithoutCategories : [String:Int] = [
-    "jollof rice":2000, "ofada rice": 2500, "fried rice":3000, "coconunt rice":2800,
+    "jollof rice":2000, "ofada rice": 2500, "fried rice":3000, "coconut rice":2800,
     "tomato stew":500, "banga stew":300, "vegetable stew": 200, "sauce stew":900,
     "eba":350, "fufu":400, "semo":500, "amala":250,
     "lekki pizza":2500, "ikeja pizza":2000, "yaba pizza":1500, "ojuelegba pizza":600,
@@ -39,7 +39,7 @@ class Order {
     
     func addToCart(itemNameAndQuantity: Dictionary<String,Int>) -> Bool {
         
-        let nameOfItem = Array(itemNameAndQuantity.keys)[0]
+        let nameOfItem: String = Array(itemNameAndQuantity.keys)[0]
         for item in arrayOfMenuItems{ //checks if item to be added exists in menu items
             if item == nameOfItem { //confirms that item is in menuList
                 if self.itemsInCart.index(forKey: nameOfItem) != nil { //checks if item to be removed exists in the users cart
