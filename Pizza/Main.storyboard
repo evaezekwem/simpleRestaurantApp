@@ -2261,7 +2261,7 @@
         <!--Pizza Category-->
         <scene sceneID="awb-5o-PrB">
             <objects>
-                <viewController title="Pizza Category" modalTransitionStyle="crossDissolve" id="f5F-yB-Ts6" sceneMemberID="viewController">
+                <viewController title="Pizza Category" modalTransitionStyle="crossDissolve" id="f5F-yB-Ts6" customClass="pizzaCategoryViewController" customModule="Pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1kt-69-TIF"/>
                         <viewControllerLayoutGuide type="bottom" id="taX-H6-MAj"/>
@@ -2364,7 +2364,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEw-gL-dGV" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton1" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="vCM-2R-JBp"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -2449,7 +2452,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-N4-ham" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton2" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="bco-3C-khA"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -2534,7 +2540,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83u-Z7-8Gw" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton3" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="Dy7-gT-FA1"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -2656,7 +2665,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grh-cO-OXh" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton4" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="5wC-Yv-U97"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -2891,6 +2903,21 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1159"/>
+                    <connections>
+                        <outlet property="firstPizzaItemImage" destination="GIv-He-zfv" id="JoY-hW-nZ6"/>
+                        <outlet property="firstPizzaItemName" destination="eX8-gq-3or" id="eRd-HO-H8J"/>
+                        <outlet property="firstPizzaItemPrice" destination="BLe-8Z-txd" id="ky8-9j-qSW"/>
+                        <outlet property="fourthPizzaItemImage" destination="lIc-No-Z03" id="XYf-mq-rR5"/>
+                        <outlet property="fourthPizzaItemName" destination="hVl-xA-57Y" id="Y17-lZ-T7U"/>
+                        <outlet property="fourthPizzaItemPrice" destination="t18-OX-G2F" id="b8v-ED-qTZ"/>
+                        <outlet property="secondPizzaItemImage" destination="Ene-Id-05M" id="ee8-ah-vL9"/>
+                        <outlet property="secondPizzaItemName" destination="ZZc-kU-r6u" id="T5h-7b-AuG"/>
+                        <outlet property="secondPizzaItemPrice" destination="8DX-GN-QwD" id="Uoo-kN-NN4"/>
+                        <outlet property="thirdPizzaItemImage" destination="M9w-oH-G3c" id="Wd4-dJ-aZC"/>
+                        <outlet property="thirdPizzaItemName" destination="9uy-61-3WP" id="jGq-Sk-gd3"/>
+                        <outlet property="thirdPizzaItemPrice" destination="NXm-mZ-dxh" id="U12-Cm-DXw"/>
+                        <outlet property="totalItemsInCart" destination="h9d-hC-KnR" id="Tyq-nk-Cbv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd0-1K-jzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CZM-Mt-a9n">
@@ -2909,7 +2936,7 @@
         <!--Drinks Category-->
         <scene sceneID="S5h-F1-yd7">
             <objects>
-                <viewController title="Drinks Category" modalTransitionStyle="crossDissolve" id="A7R-5j-QEq" sceneMemberID="viewController">
+                <viewController title="Drinks Category" modalTransitionStyle="crossDissolve" id="A7R-5j-QEq" customClass="drinksViewController" customModule="Pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f5a-K6-11J"/>
                         <viewControllerLayoutGuide type="bottom" id="9XL-TU-UQD"/>
@@ -6257,8 +6284,8 @@
         <image name="vegetable_stew" width="4272" height="2848"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vku-pb-pSG"/>
-        <segue reference="mkQ-Zg-GyM"/>
-        <segue reference="nwF-qI-sbX"/>
+        <segue reference="mT2-x4-FzE"/>
+        <segue reference="mWI-D8-fz1"/>
+        <segue reference="mMH-Ch-tO9"/>
     </inferredMetricsTieBreakers>
 </document>
