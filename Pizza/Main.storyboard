@@ -3039,7 +3039,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr5-lV-YbC" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton1" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="A7R-5j-QEq" eventType="touchUpInside" id="qqM-pP-U7A"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -3124,7 +3127,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23L-XP-l94" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton2" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="A7R-5j-QEq" eventType="touchUpInside" id="GKD-En-aFm"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -3209,7 +3215,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="353-Jo-Kds" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton3" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="A7R-5j-QEq" eventType="touchUpInside" id="sIg-Qr-JLu"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -3331,7 +3340,10 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-AX-lax" userLabel="add to cart">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="add_to_cart"/>
+                                                                        <state key="normal" title="addToCartButton4" image="add_to_cart"/>
+                                                                        <connections>
+                                                                            <action selector="onClick_AddToCartButton:" destination="A7R-5j-QEq" eventType="touchUpInside" id="tcl-Tj-tvE"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -3566,6 +3578,21 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1159"/>
+                    <connections>
+                        <outlet property="firstDrinkItemImage" destination="sQs-jj-l47" id="h9n-r4-E2D"/>
+                        <outlet property="firstDrinkItemName" destination="0BQ-4g-6Xu" id="QBd-tW-FHE"/>
+                        <outlet property="firstDrinkItemPrice" destination="vi7-4d-tOR" id="ZC9-EI-3uj"/>
+                        <outlet property="fourthDrinkItemImage" destination="mCm-3e-jJo" id="leY-PX-EyF"/>
+                        <outlet property="fourthDrinkItemName" destination="P6j-6w-d3a" id="zGb-8q-wSz"/>
+                        <outlet property="fourthDrinkItemPrice" destination="4DK-ji-oMa" id="igP-Wt-QEZ"/>
+                        <outlet property="secondDrinkItemImage" destination="gik-wa-qai" id="VNF-tR-pVL"/>
+                        <outlet property="secondDrinkItemName" destination="EO1-FP-RgK" id="r6E-2I-2jG"/>
+                        <outlet property="secondDrinkItemPrice" destination="2A7-5d-IFh" id="LpV-Wc-0Wb"/>
+                        <outlet property="thirdDrinkItemImage" destination="xkh-0H-en2" id="l99-4I-aXj"/>
+                        <outlet property="thirdDrinkItemName" destination="vov-5S-NXp" id="cgr-re-s0p"/>
+                        <outlet property="thirdDrinkItemPrice" destination="V4E-sv-mB3" id="xzD-s7-iqH"/>
+                        <outlet property="totalItemsInCart" destination="yqC-e6-Bd8" id="LFO-55-ZAS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lni-di-4xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6ch-vB-6h3">
@@ -4180,24 +4207,21 @@
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="OF0-rH-Mhj">
                                         <rect key="frame" x="121" y="20" width="133" height="60"/>
                                         <subviews>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_total" translatesAutoresizingMaskIntoConstraints="NO" id="6IE-BK-Q0w">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="E0t-09-zS8">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <gestureRecognizers/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDv-JH-cqv">
-                                                <rect key="frame" x="79" y="3" width="12" height="24"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bb-p9-mUn">
+                                                <rect key="frame" x="67.5" y="12" width="11" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="6IE-BK-Q0w" firstAttribute="top" secondItem="OF0-rH-Mhj" secondAttribute="top" id="2M0-xy-H3M"/>
-                                            <constraint firstAttribute="bottom" secondItem="6IE-BK-Q0w" secondAttribute="bottom" id="FGc-ve-sOc"/>
-                                            <constraint firstAttribute="trailing" secondItem="6IE-BK-Q0w" secondAttribute="trailing" id="Q9X-1M-2LQ"/>
-                                            <constraint firstItem="ZDv-JH-cqv" firstAttribute="top" secondItem="OF0-rH-Mhj" secondAttribute="top" constant="3" id="YDl-bA-ODH"/>
-                                            <constraint firstItem="6IE-BK-Q0w" firstAttribute="leading" secondItem="OF0-rH-Mhj" secondAttribute="leading" id="bbW-Ie-vQQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZDv-JH-cqv" secondAttribute="trailing" constant="42" id="vOv-4Z-ZWG"/>
+                                            <constraint firstItem="5Bb-p9-mUn" firstAttribute="centerY" secondItem="OF0-rH-Mhj" secondAttribute="centerY" constant="-7.5" id="BXw-TF-QfK"/>
+                                            <constraint firstItem="5Bb-p9-mUn" firstAttribute="centerX" secondItem="OF0-rH-Mhj" secondAttribute="centerX" constant="6.25" id="rpW-dx-81G"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="AQf-57-bwx">
@@ -6038,24 +6062,21 @@
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-VX-aRi">
                                         <rect key="frame" x="121" y="20" width="133" height="60"/>
                                         <subviews>
-                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart_total" translatesAutoresizingMaskIntoConstraints="NO" id="qHt-0z-TIv">
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="orf-6m-Fg3">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <gestureRecognizers/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8aR-7c-LrG">
-                                                <rect key="frame" x="79" y="3" width="12" height="24"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-Rr-8g4">
+                                                <rect key="frame" x="67.5" y="12" width="11" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="8aR-7c-LrG" firstAttribute="top" secondItem="xzB-VX-aRi" secondAttribute="top" constant="3" id="3vO-H9-5Kv"/>
-                                            <constraint firstAttribute="trailing" secondItem="8aR-7c-LrG" secondAttribute="trailing" constant="42" id="RJf-gx-O9P"/>
-                                            <constraint firstAttribute="trailing" secondItem="qHt-0z-TIv" secondAttribute="trailing" id="Vwk-aM-ZxR"/>
-                                            <constraint firstItem="qHt-0z-TIv" firstAttribute="top" secondItem="xzB-VX-aRi" secondAttribute="top" id="Y8n-Sg-CN8"/>
-                                            <constraint firstAttribute="bottom" secondItem="qHt-0z-TIv" secondAttribute="bottom" id="fiN-Mm-bAC"/>
-                                            <constraint firstItem="qHt-0z-TIv" firstAttribute="leading" secondItem="xzB-VX-aRi" secondAttribute="leading" id="kLd-FR-wSK"/>
+                                            <constraint firstItem="5E7-Rr-8g4" firstAttribute="centerY" secondItem="xzB-VX-aRi" secondAttribute="centerY" constant="-7.5" id="SZR-Ke-hmH"/>
+                                            <constraint firstItem="5E7-Rr-8g4" firstAttribute="centerX" secondItem="xzB-VX-aRi" secondAttribute="centerX" constant="6.25" id="y3s-D9-I6u"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="a8v-Hs-oLn">
@@ -6258,7 +6279,6 @@
         <image name="beer" width="1036" height="771"/>
         <image name="bottled_water" width="1000" height="667"/>
         <image name="cart" width="200" height="200"/>
-        <image name="cart_total" width="227" height="201"/>
         <image name="coconut_rice" width="1800" height="785"/>
         <image name="coke" width="259" height="194"/>
         <image name="eba" width="1507" height="895"/>
@@ -6286,6 +6306,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="mT2-x4-FzE"/>
         <segue reference="mWI-D8-fz1"/>
-        <segue reference="mMH-Ch-tO9"/>
+        <segue reference="MKm-yI-y8l"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,7 +12,7 @@ let menuList: [String:[String:Int]] = [
     "swallow":["eba":350, "fufu":400, "semo":500, "amala":250],
     "pizza":["lekki pizza":2500, "ikeja pizza":2000, "yaba pizza":1500, "ojuelegba pizza":600],
     "soup":["egusi soup":300, "okro soup":350, "ogbono soup":150, "eforiro soup":600],
-    "drinks":["coke":100, "malt":150, "bottled water":50, "beer":250]
+    "drinks":["coca-cola":100, "malt":150, "bottled water":50, "beer":250]
 ]
 
 let menuListWithoutCategories : [String:Int] = [
@@ -21,7 +21,7 @@ let menuListWithoutCategories : [String:Int] = [
     "eba":350, "fufu":400, "semo":500, "amala":250,
     "lekki pizza":2500, "ikeja pizza":2000, "yaba pizza":1500, "ojuelegba pizza":600,
     "egusi soup":300, "okro soup":350, "ogbono soup":150, "eforiro soup":600,
-    "coke":100, "malt":150, "bottled water":50, "beer":250
+    "coca-cola":100, "malt":150, "bottled water":50, "beer":250
 ]
 
 
