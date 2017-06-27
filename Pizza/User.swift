@@ -15,6 +15,7 @@ class User: Order {
     var userDeliveryAddress:String = String()
     var userPreviousOrder:String = String()
     
+    
     //Initializing table columns for various menu items
     private let tblRice = Table("rice")
     private let riceId =  Expression<Int64?>("id")

@@ -32,10 +32,13 @@ let arrayOfMenuItem3 : [String] = Array(menuList["soup"]!.keys) + Array(menuList
 
 let arrayOfMenuItems : [String] = arrayOfMenuItem1 + arrayOfMenuItem2 + arrayOfMenuItem3
 
+
+
 class Order {
     
     var itemsInCart : [String:Int] = [String:Int]()
     var lastOrder : [String:Int] = [String:Int]()
+    var numberOfItems: Int = 0
     
     func addToCart(itemNameAndQuantity: Dictionary<String,Int>) -> Bool {
         
@@ -67,12 +70,11 @@ class Order {
         
         return false
     }
-    
+ 
     func numberOfItemsInCart() -> Int {
-        let numberOfItems = self.itemsInCart.count
-        return numberOfItems
+        return self.itemsInCart.count
     }
-    
+ 
     func totalOrder() -> Int {
         var totalCost : Int = 0
         //var itemQuantity : Int = 0
