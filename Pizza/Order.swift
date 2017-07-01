@@ -61,7 +61,20 @@ class Order {
         return false
     }
     
-    
+ /*   func displayItemsInCart(inputItemsInCart: [String:Int]) -> [String] {
+        let arrayOfItemNames: [String] = Array(inputItemsInCart.keys)
+        let arrayOfItemQuantity: [Int] = Array(inputItemsInCart.values)
+        
+        var convertQuantityToStringArray = arrayOfItemQuantity.map
+        {
+            String($0)
+        }
+        
+        
+        return
+    }
+*/
+ 
     func removeFromCart(itemName: String) -> Bool {
         if self.itemsInCart.index(forKey: itemName) != nil { //checks if item to be removed exists in the users cart
             self.itemsInCart.removeValue(forKey: itemName)

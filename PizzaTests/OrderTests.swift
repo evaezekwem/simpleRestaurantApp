@@ -176,9 +176,9 @@ class OrderTests: XCTestCase {
     func testLoginUserDidELoginRegisteredUser() {
         _ = user.registerUser(inputName: "Test User", inputEmail: "test@mail.com", inputPassword: "secretpass", inputPhone: 55555555, inputDeliveryAddress: "1 Unit Test Street, Xcode Avenue, Swift State, Apple Inc")
         _ = user.loginUser(inputEmail: "test@mail.com", inputPassword: "secretpass")
-        let result = user.userName
+        let result = loggedInUser.userName
         
         XCTAssertEqual(result, "Test User")
     }
-    
+        
 }

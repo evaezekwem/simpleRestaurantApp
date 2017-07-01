@@ -15,7 +15,6 @@ class User: Order {
     var userDeliveryAddress:String = String()
     var userPreviousOrder:String = String()
     
-    
     //Initializing table columns for various menu items
     private let tblRice = Table("rice")
     private let riceId =  Expression<Int64?>("id")
@@ -69,7 +68,7 @@ class User: Order {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
         do {
-            db = try Connection("\(path)/test5.sqlite3") //creates an empty database with name ishop.sqlite3
+            db = try Connection("\(path)/test6.sqlite3") //creates an empty database with name ishop.sqlite3
             //createTables()
         } catch {
             db = nil
@@ -212,18 +211,21 @@ class User: Order {
         return false
     }
     
+    
     func loginUser(inputEmail: String, inputPassword: String) -> Bool {
         if checkUser(inputEmail: inputEmail) == inputEmail {
             let query = tblUsers.filter(email == inputEmail)
             for user in try! db!.prepare(query){
                 let actualPassword = user[password]
                 if actualPassword == inputPassword {
-                    self.userEmail = inputEmail
-                    self.userPassword = inputPassword
-                    self.userName = user[name]
-                    self.userPhone = user[phone]
-                    self.userDeliveryAddress = user[deliveryAddress]
-                    self.userPreviousOrder = user[previousOrder] ?? ""
+                    loggedInUser.userEmail = inputEmail
+                    loggedInUser.userPassword = inputPassword
+                    loggedInUser.userName = user[name]
+                    loggedInUser.userPhone = user[phone]
+                    loggedInUser.userDeliveryAddress = user[deliveryAddress]
+                    loggedInUser.userPreviousOrder = user[previousOrder] ?? ""
+                    loggedInUser.userIsLoggedIn = true
+                    self.userIsLoggedIn = true
                     return true
                 }
             }
@@ -232,7 +234,7 @@ class User: Order {
         
         return false
     }
-    
+        
     func addMenu(category: String, inputName: String, inputPrice: Int64, inputImageName: String) -> Bool {
         switch category.lowercased(){
         case "rice":

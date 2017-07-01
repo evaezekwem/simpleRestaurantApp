@@ -8,10 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		92942DADAB65F23FEA41CAE8 /* Pods_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAF14262ECEE3FFFCE68E0C /* Pods_Pizza.framework */; };
+		A64082A61F046B410069328C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64082A51F046B410069328C /* loginViewController.swift */; };
+		A64DD6351F06970B00DDA61D /* orderSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DD6341F06970B00DDA61D /* orderSummaryViewController.swift */; };
 		A65259A31F025BE7009217E1 /* swallowCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65259A21F025BE7009217E1 /* swallowCategoryViewController.swift */; };
 		A65259A51F0260C2009217E1 /* soupCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65259A41F0260C2009217E1 /* soupCategoryViewController.swift */; };
 		A65259A71F026AEF009217E1 /* pizzaCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65259A61F026AEF009217E1 /* pizzaCategoryViewController.swift */; };
 		A65259A91F026E67009217E1 /* drinksCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65259A81F026E67009217E1 /* drinksCategoryViewController.swift */; };
+		A65259AB1F0278FD009217E1 /* registrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65259AA1F0278FD009217E1 /* registrationViewController.swift */; };
+		A6741F9D1F0811F6004CB07D /* confirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6741F9C1F0811F6004CB07D /* confirmOrderViewController.swift */; };
+		A6741F9F1F081CEF004CB07D /* orderSuccessfulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6741F9E1F081CEF004CB07D /* orderSuccessfulViewController.swift */; };
+		A6741FA11F082A0C004CB07D /* deliveryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6741FA01F082A0C004CB07D /* deliveryDetailsViewController.swift */; };
+		A6741FA41F0845CF004CB07D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6741FA31F0845CF004CB07D /* Globals.swift */; };
 		A6D1CCC81F02044400AE63AD /* stewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1CCC71F02044400AE63AD /* stewCategoryViewController.swift */; };
 		A6F2D8F71F01D1EE004CDD4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2D8F61F01D1EE004CDD4B /* AppDelegate.swift */; };
 		A6F2D8FE1F01D1EE004CDD4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F2D8FD1F01D1EE004CDD4B /* Assets.xcassets */; };
@@ -57,10 +64,17 @@
 		4BCCDEC358838B805ABC25BE /* Pods-PizzaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaTests/Pods-PizzaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82CD0774C211ACFBD0150FE5 /* Pods-Pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza/Pods-Pizza.release.xcconfig"; sourceTree = "<group>"; };
 		98C0A8B94B86B6D7EE212709 /* Pods_PizzaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64082A51F046B410069328C /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		A64DD6341F06970B00DDA61D /* orderSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderSummaryViewController.swift; sourceTree = "<group>"; };
 		A65259A21F025BE7009217E1 /* swallowCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swallowCategoryViewController.swift; sourceTree = "<group>"; };
 		A65259A41F0260C2009217E1 /* soupCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = soupCategoryViewController.swift; sourceTree = "<group>"; };
 		A65259A61F026AEF009217E1 /* pizzaCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pizzaCategoryViewController.swift; sourceTree = "<group>"; };
 		A65259A81F026E67009217E1 /* drinksCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drinksCategoryViewController.swift; sourceTree = "<group>"; };
+		A65259AA1F0278FD009217E1 /* registrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registrationViewController.swift; sourceTree = "<group>"; };
+		A6741F9C1F0811F6004CB07D /* confirmOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = confirmOrderViewController.swift; sourceTree = "<group>"; };
+		A6741F9E1F081CEF004CB07D /* orderSuccessfulViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderSuccessfulViewController.swift; sourceTree = "<group>"; };
+		A6741FA01F082A0C004CB07D /* deliveryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deliveryDetailsViewController.swift; sourceTree = "<group>"; };
+		A6741FA31F0845CF004CB07D /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		A6D1CCC71F02044400AE63AD /* stewCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stewCategoryViewController.swift; sourceTree = "<group>"; };
 		A6F2D8F31F01D1EE004CDD4B /* Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F2D8F61F01D1EE004CDD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +187,12 @@
 				A65259A41F0260C2009217E1 /* soupCategoryViewController.swift */,
 				A65259A61F026AEF009217E1 /* pizzaCategoryViewController.swift */,
 				A65259A81F026E67009217E1 /* drinksCategoryViewController.swift */,
+				A65259AA1F0278FD009217E1 /* registrationViewController.swift */,
+				A64082A51F046B410069328C /* loginViewController.swift */,
+				A64DD6341F06970B00DDA61D /* orderSummaryViewController.swift */,
+				A6741F9C1F0811F6004CB07D /* confirmOrderViewController.swift */,
+				A6741F9E1F081CEF004CB07D /* orderSuccessfulViewController.swift */,
+				A6741FA01F082A0C004CB07D /* deliveryDetailsViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -191,6 +211,7 @@
 			children = (
 				A6F2D9241F01D9DD004CDD4B /* Order.swift */,
 				A6F2D9271F01DA3F004CDD4B /* User.swift */,
+				A6741FA31F0845CF004CB07D /* Globals.swift */,
 			);
 			name = "core classes";
 			sourceTree = "<group>";
@@ -411,15 +432,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6F2D9281F01DA3F004CDD4B /* User.swift in Sources */,
+				A6741F9F1F081CEF004CB07D /* orderSuccessfulViewController.swift in Sources */,
 				A6F2D9251F01D9DD004CDD4B /* Order.swift in Sources */,
 				A6F2D92C1F01E47A004CDD4B /* menuCategoryViewController.swift in Sources */,
 				A6D1CCC81F02044400AE63AD /* stewCategoryViewController.swift in Sources */,
+				A64DD6351F06970B00DDA61D /* orderSummaryViewController.swift in Sources */,
 				A6F2D92E1F01E525004CDD4B /* riceCategoryViewController.swift in Sources */,
+				A6741F9D1F0811F6004CB07D /* confirmOrderViewController.swift in Sources */,
 				A65259A31F025BE7009217E1 /* swallowCategoryViewController.swift in Sources */,
 				A65259A51F0260C2009217E1 /* soupCategoryViewController.swift in Sources */,
 				A65259A91F026E67009217E1 /* drinksCategoryViewController.swift in Sources */,
+				A64082A61F046B410069328C /* loginViewController.swift in Sources */,
 				A6F2D8F71F01D1EE004CDD4B /* AppDelegate.swift in Sources */,
+				A65259AB1F0278FD009217E1 /* registrationViewController.swift in Sources */,
 				A65259A71F026AEF009217E1 /* pizzaCategoryViewController.swift in Sources */,
+				A6741FA41F0845CF004CB07D /* Globals.swift in Sources */,
+				A6741FA11F082A0C004CB07D /* deliveryDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

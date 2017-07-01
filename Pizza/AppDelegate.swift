@@ -8,6 +8,7 @@
 
 import UIKit
 var anonymousUser: User = User()
+var loggedInUser: User = User()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = User.shared.checkUser(inputEmail: "opeke@mail.com")
         
 
+       
+        
         
         
         return true
