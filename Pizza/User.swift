@@ -68,7 +68,7 @@ class User: Order {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
         do {
-            db = try Connection("\(path)/test6.sqlite3") //creates an empty database with name ishop.sqlite3
+            db = try Connection("\(path)/chopizzadb.sqlite3") //creates an empty database with name ishop.sqlite3
             //createTables()
         } catch {
             db = nil

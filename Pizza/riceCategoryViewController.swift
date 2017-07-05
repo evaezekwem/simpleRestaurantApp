@@ -30,6 +30,10 @@ class riceCategoryViewController: UIViewController {
 
     @IBOutlet weak var totalItemsInCart: UILabel!
 
+    var clickedItemName = ""
+    var clickedItemPrice = ""
+    var clickedItemDescrp = ""
+    var clickedItemImage: UIImage = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +56,8 @@ class riceCategoryViewController: UIViewController {
         fourthRiceItemPrice.text = "N2500"
         
         totalItemsInCart.text = String(anonymousUser.numberOfItemsInCart())
+        
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -95,13 +101,65 @@ class riceCategoryViewController: UIViewController {
         
     }
     
-    /*
+    @IBAction func onClick_FoodItemImage(_ sender: UIButton) {
+        
+        let whichItemImageButtonClicked = sender.title(for: .normal)
+        
+        switch whichItemImageButtonClicked {
+        case "itemDetailPageButtion1"?:
+            clickedItemName = firstRiceItemName.text!
+            clickedItemImage = firstRiceItemImage.image!
+            clickedItemPrice = firstRiceItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion2"?:
+            clickedItemName = secondRiceItemName.text!
+            clickedItemImage = secondRiceItemImage.image!
+            clickedItemPrice = secondRiceItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            break
+
+        case "itemDetailPageButtion3"?:
+            clickedItemName = thirdRiceItemName.text!
+            clickedItemImage = thirdRiceItemImage.image!
+            clickedItemPrice = thirdRiceItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            break
+
+        case "itemDetailPageButtion4"?:
+            clickedItemName = fourthRiceItemName.text!
+            clickedItemImage = fourthRiceItemImage.image!
+            clickedItemPrice = fourthRiceItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            break
+
+            
+        default:
+            break
+        }
+        
+        
+        
+    }
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+        
+        if segue.identifier == "riceCategoryToDetails" {
+            let DestViewController : detailsViewController = segue.destination as! detailsViewController
+            DestViewController.itemName = clickedItemName
+            DestViewController.image = clickedItemImage
+            DestViewController.itemPrice = clickedItemPrice
+            DestViewController.itemDescrip = clickedItemDescrp
+            DestViewController.previousSegue = "detailsToRice"
+        }
+    }
+ 
 }

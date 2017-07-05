@@ -24,6 +24,16 @@ let menuListWithoutCategories : [String:Int] = [
     "coca-cola":100, "malt":150, "bottled water":50, "beer":250
 ]
 
+let itemsDescription : [String:String] = [
+"jollof rice":"The dish consists of rice, tomatoes and tomato paste, onions, salt, spices and chili peppers; optional ingredients can be added such as vegetables, meats, or fish. Due to the tomato paste and palm oil the dish is always red in color.",
+"ofada rice":"Ofada rice is a name for a heritage variety of rice grown in south-west Nigeria. It is grown almost exclusively in Ogun State, a state in Southwestern Nigeria. It is named after the town Ofada in Ogun State. Ofada rices are mostly blends, and are not indigenous to Africa. It is often served with a vegetable stew.",
+"fried rice":"Fried rice is a dish of cooked rice that has been stir-fried in a wok or a frying pan and is usually mixed with other ingredients like eggs and vegetables.",
+"coconut rice":"A rice recipe prepared with coconut milk extract, is sure to wake up your taste buds.",
+"tomato stew":"Tomato Stew is a simple stew used for cooking Nigerian Jollof Rice and Coconut Rice Recipes it can be used together with many various types of food.",
+"banga stew":"Also known as 'Ofe Akwu' is a palm nut stew that is native to the Igbos in Nigeria. It is similar to the Efik's Banga Soup",
+"vegetable stew":"It is a type of stew with alot of vegetable (pumpkin) in it. It is usually common among vegetarians.",
+"sauce stew":"It is a highly proteinous dish with assorted meats, vegetables and spices. Some chef include irish potatoes as well.",
+]
 
 //converts menuList to array of all menu items without price tags
 let arrayOfMenuItem1 : [String] = Array(menuList["rice"]!.keys) + Array(menuList["stew"]!.keys)
@@ -131,6 +141,10 @@ class Order {
         }
         
         return searchResult
+    }
+    
+    func getItemDescription(itemName: String) -> String {
+        return itemsDescription[itemName]!
     }
     
     
