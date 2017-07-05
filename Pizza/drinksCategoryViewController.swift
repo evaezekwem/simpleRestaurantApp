@@ -147,6 +147,10 @@ class drinksViewController: UIViewController {
         
     }
     
+    @IBAction func onClick_Cart(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "drinksToOrderSummary", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -157,6 +161,10 @@ class drinksViewController: UIViewController {
             DestViewController.itemPrice = clickedItemPrice
             DestViewController.itemDescrip = clickedItemDescrp
             DestViewController.previousSegue = "detailsToDrinks"
+        } else if segue.identifier == "drinksToOrderDetails" {
+            
+            let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
+            DestViewController.previousSegue = "orderSummaryToDrinks"
         }
     }
     

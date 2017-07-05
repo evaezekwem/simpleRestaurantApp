@@ -147,9 +147,11 @@ class riceCategoryViewController: UIViewController {
         
     }
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func onClick_Cart(_ sender: UIButton) {
+        performSegue(withIdentifier: "riceToOrderSummary", sender: self)
+    }
+    
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "riceToDetails" {
@@ -159,6 +161,9 @@ class riceCategoryViewController: UIViewController {
             DestViewController.itemPrice = clickedItemPrice
             DestViewController.itemDescrip = clickedItemDescrp
             DestViewController.previousSegue = "detailsToRice"
+        } else if segue.identifier == "riceToOrderSummary" {
+            let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
+            DestViewController.previousSegue = "orderSummaryToRice"
         }
     }
  

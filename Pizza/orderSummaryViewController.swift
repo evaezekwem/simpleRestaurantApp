@@ -16,7 +16,7 @@ class orderSummaryViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var messageLabel: UILabel!
     
-    
+     var previousSegue: String = String()
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -68,6 +68,18 @@ class orderSummaryViewController: UIViewController, UITableViewDataSource {
         } else {
             messageLabel.text = "Cart is empty"
         }
+    }
+    
+    
+    @IBAction func onClick_BackButton(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: previousSegue, sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
     }
 
    

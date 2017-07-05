@@ -144,16 +144,26 @@ class swallowViewController: UIViewController {
 
     }
     
+    @IBAction func onClick_Cart(_ sender: UIButton) {
+        performSegue(withIdentifier: "swallowToOrderSummary", sender: self)
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "swallowToDetails" {
+            
             let DestViewController : detailsViewController = segue.destination as! detailsViewController
             DestViewController.itemName = clickedItemName
             DestViewController.image = clickedItemImage
             DestViewController.itemPrice = clickedItemPrice
             DestViewController.itemDescrip = clickedItemDescrp
             DestViewController.previousSegue = "detailsToSwallow"
+            
+        } else if segue.identifier == "swallowToOrderSummary" {
+            
+            let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
+            DestViewController.previousSegue = "orderSummaryToSwallow"
         }
     }
 

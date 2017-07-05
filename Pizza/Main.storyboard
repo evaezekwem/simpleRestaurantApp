@@ -604,7 +604,6 @@
                                                 <gestureRecognizers/>
                                                 <connections>
                                                     <outletCollection property="gestureRecognizers" destination="qbi-O2-4yy" appends="YES" id="EmA-dr-Mrl"/>
-                                                    <outletCollection property="gestureRecognizers" destination="odp-YW-o06" appends="YES" id="eTg-Sw-caj"/>
                                                 </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjL-ZY-QTR">
@@ -613,15 +612,28 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg7-ln-rTv">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <state key="normal" title="Cart">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClick_Cart:" destination="3w2-SB-Oql" eventType="touchUpInside" id="HBr-jN-n3H"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Xg7-ln-rTv" secondAttribute="trailing" id="A3v-ny-fzA"/>
                                             <constraint firstAttribute="bottom" secondItem="9a8-zG-oft" secondAttribute="bottom" id="O9D-7V-8te"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xg7-ln-rTv" secondAttribute="bottom" id="PJS-qo-RaD"/>
                                             <constraint firstAttribute="trailing" secondItem="9a8-zG-oft" secondAttribute="trailing" id="Qub-b6-wAQ"/>
                                             <constraint firstItem="9a8-zG-oft" firstAttribute="top" secondItem="UuR-yB-HrO" secondAttribute="top" id="Vse-zh-9n6"/>
                                             <constraint firstItem="WjL-ZY-QTR" firstAttribute="centerX" secondItem="9a8-zG-oft" secondAttribute="centerX" constant="6.25" id="Zc0-9A-xDM"/>
                                             <constraint firstItem="WjL-ZY-QTR" firstAttribute="leading" secondItem="9a8-zG-oft" secondAttribute="trailing" constant="-65.5" id="fqG-9X-GpM"/>
                                             <constraint firstItem="9a8-zG-oft" firstAttribute="leading" secondItem="UuR-yB-HrO" secondAttribute="leading" id="mri-Pb-oVm"/>
+                                            <constraint firstItem="Xg7-ln-rTv" firstAttribute="leading" secondItem="UuR-yB-HrO" secondAttribute="leading" id="nyX-1W-Ai0"/>
                                             <constraint firstItem="WjL-ZY-QTR" firstAttribute="centerY" secondItem="9a8-zG-oft" secondAttribute="centerY" constant="-7.5" id="wGl-du-cdX"/>
+                                            <constraint firstItem="Xg7-ln-rTv" firstAttribute="top" secondItem="UuR-yB-HrO" secondAttribute="top" id="wYi-kJ-HSF"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lcx-of-1Xj">
@@ -707,6 +719,7 @@
                         <outlet property="thirdRiceItemPrice" destination="njF-od-AUG" id="YZZ-WP-VVP"/>
                         <outlet property="totalItemsInCart" destination="WjL-ZY-QTR" id="Rd0-Qr-0Jh"/>
                         <segue destination="Xuh-YM-bl8" kind="show" identifier="riceToDetails" id="IW2-uc-MLa"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="riceToOrderSummary" id="ryc-ek-Wb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFP-GD-qnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,11 +729,6 @@
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="qbi-O2-4yy"/>
-                <tapGestureRecognizer id="odp-YW-o06">
-                    <connections>
-                        <segue destination="2s6-c7-Twd" kind="presentation" id="9Vc-vT-H1j"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2290.3125" y="540.625"/>
         </scene>
@@ -845,7 +853,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyy-Fh-zn5" userLabel="Order Summary Button">
                                                         <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                                         <connections>
-                                                            <segue destination="2s6-c7-Twd" kind="presentation" id="ZR7-mY-1k2"/>
+                                                            <action selector="onClick_Cart:" destination="Xuh-YM-bl8" eventType="touchUpInside" id="qld-Ou-ZHL"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -974,6 +982,7 @@
                         <segue destination="STz-sE-Pa0" kind="show" identifier="detailsToSoup" id="B0x-Tw-F5D"/>
                         <segue destination="f5F-yB-Ts6" kind="show" identifier="detailsToPizza" id="6Qk-Qo-5pb"/>
                         <segue destination="A7R-5j-QEq" kind="show" identifier="detailsToDrinks" id="Q8v-o9-T3I"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="detailsToOrderSummary" id="Q7p-2g-t5d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goR-DN-q00" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1804,9 +1813,6 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="gP3-0Y-Kxs">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                                 <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="B40-KX-5Ij" appends="YES" id="ezw-Yl-3jz"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOq-Ht-HuR">
                                                 <rect key="frame" x="67" y="12" width="11" height="21"/>
@@ -1814,11 +1820,24 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq8-uj-2g4">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <state key="normal" title="Cart">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClick_Cart:" destination="pgh-Zo-xf5" eventType="touchUpInside" id="S9J-5E-oF2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="gP3-0Y-Kxs" firstAttribute="leading" secondItem="8Lg-3y-Lab" secondAttribute="leading" id="5Mf-3E-DLQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="kq8-uj-2g4" secondAttribute="trailing" id="J8E-OC-0w8"/>
                                             <constraint firstItem="gP3-0Y-Kxs" firstAttribute="top" secondItem="8Lg-3y-Lab" secondAttribute="top" id="LRz-gg-Bd3"/>
                                             <constraint firstAttribute="trailing" secondItem="gP3-0Y-Kxs" secondAttribute="trailing" id="Ra9-4W-r1O"/>
+                                            <constraint firstAttribute="bottom" secondItem="kq8-uj-2g4" secondAttribute="bottom" id="Son-vu-qXg"/>
+                                            <constraint firstItem="kq8-uj-2g4" firstAttribute="top" secondItem="8Lg-3y-Lab" secondAttribute="top" id="eHA-bH-j1N"/>
+                                            <constraint firstItem="kq8-uj-2g4" firstAttribute="leading" secondItem="8Lg-3y-Lab" secondAttribute="leading" id="gxg-Bm-SWd"/>
                                             <constraint firstAttribute="bottom" secondItem="gP3-0Y-Kxs" secondAttribute="bottom" id="hhr-n2-MQs"/>
                                             <constraint firstItem="qOq-Ht-HuR" firstAttribute="centerX" secondItem="8Lg-3y-Lab" secondAttribute="centerX" constant="6.25" id="nXF-mY-orU"/>
                                             <constraint firstItem="qOq-Ht-HuR" firstAttribute="centerY" secondItem="8Lg-3y-Lab" secondAttribute="centerY" constant="-7.5" id="v3I-hC-nDi"/>
@@ -1907,17 +1926,13 @@
                         <outlet property="thirdStewItemPrice" destination="xoe-Ke-8Gh" id="qhY-H3-TnE"/>
                         <outlet property="totalItemsInCart" destination="qOq-Ht-HuR" id="7bn-uJ-aXZ"/>
                         <segue destination="Xuh-YM-bl8" kind="show" identifier="stewToDetails" id="k79-Wp-kFN"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="stewToOrderSummary" id="5Q3-6W-7pG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHP-dB-Jm0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="tNU-BA-bqc">
                     <connections>
                         <segue destination="UAC-xu-0B7" kind="presentation" id="Wjt-z4-okS"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="B40-KX-5Ij">
-                    <connections>
-                        <segue destination="2s6-c7-Twd" kind="presentation" id="kll-dy-pyR"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -2520,9 +2535,6 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="khc-xa-3ya">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                                 <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="JS4-Zo-4xy" appends="YES" id="CbC-ec-t9Y"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwH-Z0-sU6">
                                                 <rect key="frame" x="67" y="12" width="11" height="21"/>
@@ -2530,14 +2542,27 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEr-Am-V9Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <state key="normal" title="Cart">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClick_Cart:" destination="lGS-ZL-IYi" eventType="touchUpInside" id="edj-Pd-MSg"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zEr-Am-V9Q" secondAttribute="trailing" id="AVc-dn-8N9"/>
+                                            <constraint firstItem="zEr-Am-V9Q" firstAttribute="leading" secondItem="rjO-Dx-hFB" secondAttribute="leading" id="J3U-ad-dUT"/>
                                             <constraint firstAttribute="bottom" secondItem="khc-xa-3ya" secondAttribute="bottom" id="QYR-A8-8o5"/>
+                                            <constraint firstItem="zEr-Am-V9Q" firstAttribute="top" secondItem="rjO-Dx-hFB" secondAttribute="top" id="Qxg-Sj-HcC"/>
                                             <constraint firstItem="DwH-Z0-sU6" firstAttribute="centerX" secondItem="rjO-Dx-hFB" secondAttribute="centerX" constant="6.25" id="UGg-Gt-neG"/>
                                             <constraint firstItem="khc-xa-3ya" firstAttribute="top" secondItem="rjO-Dx-hFB" secondAttribute="top" id="afu-eo-6IM"/>
                                             <constraint firstItem="khc-xa-3ya" firstAttribute="leading" secondItem="rjO-Dx-hFB" secondAttribute="leading" id="gtZ-ac-Tnv"/>
                                             <constraint firstAttribute="trailing" secondItem="khc-xa-3ya" secondAttribute="trailing" id="kS1-LF-wnE"/>
                                             <constraint firstItem="DwH-Z0-sU6" firstAttribute="centerY" secondItem="rjO-Dx-hFB" secondAttribute="centerY" constant="-7.5" id="nhh-nr-XKS"/>
+                                            <constraint firstAttribute="bottom" secondItem="zEr-Am-V9Q" secondAttribute="bottom" id="zDQ-gp-Jof"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="XHv-Cc-z0X">
@@ -2623,17 +2648,13 @@
                         <outlet property="thirdSwallowItemPrice" destination="4HM-oC-aut" id="eBO-b9-4AN"/>
                         <outlet property="totalItemsInCart" destination="DwH-Z0-sU6" id="psY-s4-n6C"/>
                         <segue destination="Xuh-YM-bl8" kind="show" identifier="swallowToDetails" id="IeC-xf-ZaH"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="swallowToOrderSummary" id="vDe-lO-5wq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVg-ml-oNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="K0J-WW-IeE">
                     <connections>
                         <segue destination="UAC-xu-0B7" kind="presentation" id="4hw-Jc-JWG"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="JS4-Zo-4xy">
-                    <connections>
-                        <segue destination="2s6-c7-Twd" kind="presentation" id="HWH-eH-8F4"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -3235,9 +3256,6 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="uLh-x0-qof">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                                 <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="fiN-xh-cRt" appends="YES" id="uO4-vI-Kbc"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-hC-KnR">
                                                 <rect key="frame" x="67" y="12" width="11" height="21"/>
@@ -3245,13 +3263,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2f-Wt-X3c">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <state key="normal" title="Cart">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClick_Cart:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="4JF-hd-4kw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="B2f-Wt-X3c" secondAttribute="trailing" id="9ZP-3d-2Ke"/>
                                             <constraint firstItem="uLh-x0-qof" firstAttribute="top" secondItem="n7l-jl-ORe" secondAttribute="top" id="C6W-av-KJU"/>
                                             <constraint firstAttribute="bottom" secondItem="uLh-x0-qof" secondAttribute="bottom" id="Kd7-W4-sBx"/>
+                                            <constraint firstItem="B2f-Wt-X3c" firstAttribute="top" secondItem="n7l-jl-ORe" secondAttribute="top" id="OhO-Ue-9MW"/>
+                                            <constraint firstItem="B2f-Wt-X3c" firstAttribute="leading" secondItem="n7l-jl-ORe" secondAttribute="leading" id="QsW-Wq-If1"/>
                                             <constraint firstItem="h9d-hC-KnR" firstAttribute="centerY" secondItem="n7l-jl-ORe" secondAttribute="centerY" constant="-7.5" id="WT7-rS-OLA"/>
                                             <constraint firstItem="uLh-x0-qof" firstAttribute="leading" secondItem="n7l-jl-ORe" secondAttribute="leading" id="Xo6-Pk-ho4"/>
                                             <constraint firstAttribute="trailing" secondItem="uLh-x0-qof" secondAttribute="trailing" id="f4f-HW-T1L"/>
+                                            <constraint firstAttribute="bottom" secondItem="B2f-Wt-X3c" secondAttribute="bottom" id="hGs-4N-zt0"/>
                                             <constraint firstItem="h9d-hC-KnR" firstAttribute="centerX" secondItem="n7l-jl-ORe" secondAttribute="centerX" constant="6.25" id="hu6-dp-z1r"/>
                                         </constraints>
                                     </view>
@@ -3338,17 +3369,13 @@
                         <outlet property="thirdPizzaItemPrice" destination="NXm-mZ-dxh" id="U12-Cm-DXw"/>
                         <outlet property="totalItemsInCart" destination="h9d-hC-KnR" id="Tyq-nk-Cbv"/>
                         <segue destination="Xuh-YM-bl8" kind="show" identifier="pizzaToDetails" id="mSl-il-fJZ"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="pizzaToOrderSummary" id="yhC-Lj-1ej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd0-1K-jzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="CZM-Mt-a9n">
                     <connections>
                         <segue destination="UAC-xu-0B7" kind="presentation" id="SyU-xK-1EG"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="fiN-xh-cRt">
-                    <connections>
-                        <segue destination="2s6-c7-Twd" kind="presentation" id="FnF-QQ-vU3"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -3950,9 +3977,6 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="27f-oD-3Z5">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                                 <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="mP5-mB-GaU" appends="YES" id="act-EQ-SPM"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqC-e6-Bd8">
                                                 <rect key="frame" x="67" y="12" width="11" height="21"/>
@@ -3960,13 +3984,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S71-lC-dlJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <state key="normal" title="Cart">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClick_Cart:" destination="A7R-5j-QEq" eventType="touchUpInside" id="w2r-75-Wda"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="S71-lC-dlJ" secondAttribute="bottom" id="18s-uz-Uub"/>
                                             <constraint firstItem="27f-oD-3Z5" firstAttribute="top" secondItem="A2B-W2-8cw" secondAttribute="top" id="1gu-GE-M2h"/>
                                             <constraint firstAttribute="trailing" secondItem="27f-oD-3Z5" secondAttribute="trailing" id="5vu-Jz-Hbf"/>
+                                            <constraint firstAttribute="trailing" secondItem="S71-lC-dlJ" secondAttribute="trailing" id="7xG-uk-kVI"/>
+                                            <constraint firstItem="S71-lC-dlJ" firstAttribute="leading" secondItem="A2B-W2-8cw" secondAttribute="leading" id="OlD-Pw-JCc"/>
                                             <constraint firstItem="yqC-e6-Bd8" firstAttribute="centerY" secondItem="A2B-W2-8cw" secondAttribute="centerY" constant="-7.5" id="Wto-I3-lJ8"/>
                                             <constraint firstItem="27f-oD-3Z5" firstAttribute="leading" secondItem="A2B-W2-8cw" secondAttribute="leading" id="Z2q-OK-pm4"/>
                                             <constraint firstItem="yqC-e6-Bd8" firstAttribute="centerX" secondItem="A2B-W2-8cw" secondAttribute="centerX" constant="6.25" id="ZTA-u2-erL"/>
+                                            <constraint firstItem="S71-lC-dlJ" firstAttribute="top" secondItem="A2B-W2-8cw" secondAttribute="top" id="kBq-AV-E0M"/>
                                             <constraint firstAttribute="bottom" secondItem="27f-oD-3Z5" secondAttribute="bottom" id="qfg-b2-TK7"/>
                                         </constraints>
                                     </view>
@@ -4053,17 +4090,13 @@
                         <outlet property="thirdDrinkItemPrice" destination="V4E-sv-mB3" id="xzD-s7-iqH"/>
                         <outlet property="totalItemsInCart" destination="yqC-e6-Bd8" id="LFO-55-ZAS"/>
                         <segue destination="Xuh-YM-bl8" kind="show" identifier="drinksToDetails" id="4aO-9o-mDi"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="drinksToOrderSummary" id="mit-JS-8K7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lni-di-4xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="6ch-vB-6h3">
                     <connections>
                         <segue destination="UAC-xu-0B7" kind="presentation" id="mWI-D8-fz1"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="mP5-mB-GaU">
-                    <connections>
-                        <segue destination="2s6-c7-Twd" kind="presentation" id="6cb-de-GZS"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -4095,7 +4128,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button" image="back"/>
                                                 <connections>
-                                                    <segue destination="UAC-xu-0B7" kind="presentation" id="0jW-FT-hNI"/>
+                                                    <action selector="onClick_BackButton:" destination="2s6-c7-Twd" eventType="touchUpInside" id="wDK-iP-gLf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -4177,6 +4210,13 @@
                     <connections>
                         <outlet property="messageLabel" destination="3Je-1k-JIF" id="fLw-t2-DE2"/>
                         <segue destination="2gB-Pr-hYg" kind="show" identifier="orderSummaryToDeliveryDetails" id="pJF-ct-AlQ"/>
+                        <segue destination="3w2-SB-Oql" kind="show" identifier="orderSummaryToRice" id="0uC-gz-4uF"/>
+                        <segue destination="pgh-Zo-xf5" kind="show" identifier="orderSummaryToStew" id="NI1-VW-Y02"/>
+                        <segue destination="lGS-ZL-IYi" kind="show" identifier="orderSummaryToSwallow" id="ZBi-rX-DNs"/>
+                        <segue destination="STz-sE-Pa0" kind="show" identifier="orderSummaryToSoup" id="AGF-9e-kSO"/>
+                        <segue destination="f5F-yB-Ts6" kind="show" identifier="orderSummaryToPizza" id="fwW-1f-8EH"/>
+                        <segue destination="A7R-5j-QEq" kind="show" identifier="orderSummaryToDrinks" id="TlN-xi-mFm"/>
+                        <segue destination="UAC-xu-0B7" kind="show" identifier="orderSummaryToMenuCategory" id="ibY-M9-kEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL4-KO-fW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5153,9 +5193,6 @@
                                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cart" translatesAutoresizingMaskIntoConstraints="NO" id="2LD-db-wED">
                                                 <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
                                                 <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="ZP9-Cc-oRF" appends="YES" id="cOv-8y-1vo"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-IX-NUx">
                                                 <rect key="frame" x="67" y="12" width="11" height="21"/>
@@ -5163,14 +5200,27 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8S-d5-Zkm">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="60"/>
+                                                <state key="normal" title="Cart">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClick_Cart:" destination="STz-sE-Pa0" eventType="touchUpInside" id="qoH-2J-0oi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="mXA-IX-NUx" firstAttribute="centerY" secondItem="XKg-on-QSP" secondAttribute="centerY" constant="-7.5" id="0xY-AL-9OA"/>
                                             <constraint firstItem="2LD-db-wED" firstAttribute="top" secondItem="XKg-on-QSP" secondAttribute="top" id="3IL-J3-BKd"/>
+                                            <constraint firstItem="U8S-d5-Zkm" firstAttribute="top" secondItem="XKg-on-QSP" secondAttribute="top" id="5c6-Iz-N7a"/>
                                             <constraint firstItem="mXA-IX-NUx" firstAttribute="centerX" secondItem="XKg-on-QSP" secondAttribute="centerX" constant="6.25" id="NUJ-M3-R8D"/>
                                             <constraint firstItem="2LD-db-wED" firstAttribute="leading" secondItem="XKg-on-QSP" secondAttribute="leading" id="S5M-36-P0n"/>
                                             <constraint firstAttribute="trailing" secondItem="2LD-db-wED" secondAttribute="trailing" id="hh0-Ba-oLA"/>
+                                            <constraint firstItem="U8S-d5-Zkm" firstAttribute="leading" secondItem="XKg-on-QSP" secondAttribute="leading" id="i9A-gU-ZEH"/>
                                             <constraint firstAttribute="bottom" secondItem="2LD-db-wED" secondAttribute="bottom" id="l09-kK-LrZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="U8S-d5-Zkm" secondAttribute="trailing" id="tp6-59-aJF"/>
+                                            <constraint firstAttribute="bottom" secondItem="U8S-d5-Zkm" secondAttribute="bottom" id="v50-2M-Rbr"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ZPr-mZ-NXf">
@@ -5256,17 +5306,13 @@
                         <outlet property="thirdSoupItemPrice" destination="X4H-6S-gE5" id="j5c-ss-jpm"/>
                         <outlet property="totalItemsInCart" destination="mXA-IX-NUx" id="CQM-L0-b4a"/>
                         <segue destination="Xuh-YM-bl8" kind="show" identifier="soupToDetails" id="d5o-CQ-GNN"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="soupToOrderSummary" id="Ltj-Zp-oEe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bN-36-1HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="dtf-Pc-djs">
                     <connections>
                         <segue destination="UAC-xu-0B7" kind="presentation" id="hY4-5a-zdN"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="ZP9-Cc-oRF">
-                    <connections>
-                        <segue destination="2s6-c7-Twd" kind="presentation" id="IN3-t0-TRE"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -5724,16 +5770,16 @@
     <inferredMetricsTieBreakers>
         <segue reference="eq3-pk-Fwn"/>
         <segue reference="pJF-ct-AlQ"/>
-        <segue reference="6cb-de-GZS"/>
-        <segue reference="O9t-cD-IXB"/>
-        <segue reference="mWI-D8-fz1"/>
-        <segue reference="4aO-9o-mDi"/>
+        <segue reference="mit-JS-8K7"/>
+        <segue reference="TlN-xi-mFm"/>
+        <segue reference="ZBi-rX-DNs"/>
+        <segue reference="0uC-gz-4uF"/>
+        <segue reference="fwW-1f-8EH"/>
+        <segue reference="NI1-VW-Y02"/>
+        <segue reference="AGF-9e-kSO"/>
+        <segue reference="mkQ-Zg-GyM"/>
+        <segue reference="IeC-xf-ZaH"/>
         <segue reference="ONx-jR-fcU"/>
         <segue reference="kSx-m8-Hag"/>
-        <segue reference="U5s-3N-mnW"/>
-        <segue reference="kTA-eo-wWa"/>
-        <segue reference="Ra5-ie-ntd"/>
-        <segue reference="u4z-sd-PBw"/>
-        <segue reference="5vf-Je-SKf"/>
     </inferredMetricsTieBreakers>
 </document>

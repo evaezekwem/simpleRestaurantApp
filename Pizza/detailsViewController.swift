@@ -56,14 +56,17 @@ class detailsViewController: UIViewController {
         
     }
     
+    @IBAction func onClick_Cart(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "detailsToOrderSummary", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       // let DestViewController : detailsViewController = segue.destination as! detailsViewController
-        
-        //if segue.identifier == "detailsToRice" {
-           
-        //}
+        if segue.identifier == "detailsToOrderSummary" {
+            let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
+            DestViewController.previousSegue = "orderSummaryToMenuCategory"
+        }
+       
     }
 
 }

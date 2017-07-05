@@ -153,16 +153,25 @@ class stewViewController: UIViewController {
         
     }
     
+    @IBAction func onClick_Cart(_ sender: UIButton) {
+        performSegue(withIdentifier: "stewToOrderSummary", sender: self)
+    }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "stewToDetails" {
+            
             let DestViewController : detailsViewController = segue.destination as! detailsViewController
             DestViewController.itemName = clickedItemName
             DestViewController.image = clickedItemImage
             DestViewController.itemPrice = clickedItemPrice
             DestViewController.itemDescrip = clickedItemDescrp
             DestViewController.previousSegue = "detailsToStew"
+            
+        } else if segue.identifier == "stewToOrderSummary" {
+   
+            let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
+            DestViewController.previousSegue = "orderSummaryToStew"
         }
     }
 
