@@ -30,7 +30,10 @@ class soupCategoryViewController: UIViewController {
     @IBOutlet weak var totalItemsInCart: UILabel!
     
     
-    
+    var clickedItemName = ""
+    var clickedItemPrice = ""
+    var clickedItemDescrp = ""
+    var clickedItemImage: UIImage = UIImage()
     
     
     
@@ -108,16 +111,62 @@ class soupCategoryViewController: UIViewController {
         
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onClick_foodItemImage(_ sender: UIButton) {
+        
+        let whichItemImageButtonClicked = sender.title(for: .normal)
+        
+        switch whichItemImageButtonClicked {
+        case "itemDetailPageButtion1"?:
+            clickedItemName = firstSoupItemName.text!
+            clickedItemImage = firstSoupItemImage.image!
+            clickedItemPrice = firstSoupItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "soupToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion2"?:
+            clickedItemName = secondSoupItemName.text!
+            clickedItemImage = secondSoupItemImage.image!
+            clickedItemPrice = secondSoupItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "soupToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion3"?:
+            clickedItemName = thirdSoupItemName.text!
+            clickedItemImage = thirdSoupItemImage.image!
+            clickedItemPrice = thirdSoupItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "soupToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion4"?:
+            clickedItemName = fourthSoupItemName.text!
+            clickedItemImage = fourthSoupItemImage.image!
+            clickedItemPrice = fourthSoupItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "soupToDetails", sender: self)
+            break
+            
+            
+        default:
+            break
+        }
+        
+        
     }
-    */
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "soupToDetails" {
+            let DestViewController : detailsViewController = segue.destination as! detailsViewController
+            DestViewController.itemName = clickedItemName
+            DestViewController.image = clickedItemImage
+            DestViewController.itemPrice = clickedItemPrice
+            DestViewController.itemDescrip = clickedItemDescrp
+            DestViewController.previousSegue = "detailsToSoup"
+        }
+    }
+    
 }

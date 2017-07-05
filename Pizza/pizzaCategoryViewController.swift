@@ -28,6 +28,13 @@ class pizzaCategoryViewController: UIViewController {
     
     @IBOutlet weak var totalItemsInCart: UILabel!
     
+    var clickedItemName = ""
+    var clickedItemPrice = ""
+    var clickedItemDescrp = ""
+    var clickedItemImage: UIImage = UIImage()
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -94,16 +101,62 @@ class pizzaCategoryViewController: UIViewController {
         
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onClick_foodItemImage(_ sender: UIButton) {
+        
+        let whichItemImageButtonClicked = sender.title(for: .normal)
+        
+        switch whichItemImageButtonClicked {
+        case "itemDetailPageButtion1"?:
+            clickedItemName = firstPizzaItemName.text!
+            clickedItemImage = firstPizzaItemImage.image!
+            clickedItemPrice = firstPizzaItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "pizzaToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion2"?:
+            clickedItemName = secondPizzaItemName.text!
+            clickedItemImage = secondPizzaItemImage.image!
+            clickedItemPrice = secondPizzaItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "pizzaToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion3"?:
+            clickedItemName = thirdPizzaItemName.text!
+            clickedItemImage = thirdPizzaItemImage.image!
+            clickedItemPrice = thirdPizzaItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "pizzaToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion4"?:
+            clickedItemName = fourthPizzaItemName.text!
+            clickedItemImage = fourthPizzaItemImage.image!
+            clickedItemPrice = fourthPizzaItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "pizzaToDetails", sender: self)
+            break
+            
+            
+        default:
+            break
+        }
+        
+        
     }
-    */
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "pizzaToDetails" {
+            let DestViewController : detailsViewController = segue.destination as! detailsViewController
+            DestViewController.itemName = clickedItemName
+            DestViewController.image = clickedItemImage
+            DestViewController.itemPrice = clickedItemPrice
+            DestViewController.itemDescrip = clickedItemDescrp
+            DestViewController.previousSegue = "detailsToPizza"
+        }
+    }
+    
 }

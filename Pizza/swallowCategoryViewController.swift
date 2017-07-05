@@ -29,6 +29,10 @@ class swallowViewController: UIViewController {
     
     @IBOutlet weak var totalItemsInCart: UILabel!
     
+    var clickedItemName = ""
+    var clickedItemPrice = ""
+    var clickedItemDescrp = ""
+    var clickedItemImage: UIImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,16 +99,62 @@ class swallowViewController: UIViewController {
     }
     
     
-    
+    @IBAction func onClick_foodItemImage(_ sender: UIButton) {
+        
+        let whichItemImageButtonClicked = sender.title(for: .normal)
+        
+        switch whichItemImageButtonClicked {
+        case "itemDetailPageButtion1"?:
+            clickedItemName = firstSwallowItemName.text!
+            clickedItemImage = firstSwallowItemImage.image!
+            clickedItemPrice = firstSwallowItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "swallowToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion2"?:
+            clickedItemName = secondSwallowItemName.text!
+            clickedItemImage = secondSwallowItemImage.image!
+            clickedItemPrice = secondSwallowItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "swallowToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion3"?:
+            clickedItemName = thirdSwallowItemName.text!
+            clickedItemImage = thirdSwallowItemImage.image!
+            clickedItemPrice = thirdSwallowItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "swallowToDetails", sender: self)
+            break
+            
+        case "itemDetailPageButtion4"?:
+            clickedItemName = fourthSwallowItemName.text!
+            clickedItemImage = fourthSwallowItemImage.image!
+            clickedItemPrice = fourthSwallowItemPrice.text!
+            clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
+            performSegue(withIdentifier: "swallowToDetails", sender: self)
+            break
+            
+            
+        default:
+            break
+        }
+        
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "swallowToDetails" {
+            let DestViewController : detailsViewController = segue.destination as! detailsViewController
+            DestViewController.itemName = clickedItemName
+            DestViewController.image = clickedItemImage
+            DestViewController.itemPrice = clickedItemPrice
+            DestViewController.itemDescrip = clickedItemDescrp
+            DestViewController.previousSegue = "detailsToSwallow"
+        }
+    }
 
 }

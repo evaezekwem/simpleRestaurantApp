@@ -111,7 +111,7 @@ class riceCategoryViewController: UIViewController {
             clickedItemImage = firstRiceItemImage.image!
             clickedItemPrice = firstRiceItemPrice.text!
             clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
-            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            performSegue(withIdentifier: "riceToDetails", sender: self)
             break
             
         case "itemDetailPageButtion2"?:
@@ -119,7 +119,7 @@ class riceCategoryViewController: UIViewController {
             clickedItemImage = secondRiceItemImage.image!
             clickedItemPrice = secondRiceItemPrice.text!
             clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
-            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            performSegue(withIdentifier: "riceToDetails", sender: self)
             break
 
         case "itemDetailPageButtion3"?:
@@ -127,7 +127,7 @@ class riceCategoryViewController: UIViewController {
             clickedItemImage = thirdRiceItemImage.image!
             clickedItemPrice = thirdRiceItemPrice.text!
             clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
-            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            performSegue(withIdentifier: "riceToDetails", sender: self)
             break
 
         case "itemDetailPageButtion4"?:
@@ -135,7 +135,7 @@ class riceCategoryViewController: UIViewController {
             clickedItemImage = fourthRiceItemImage.image!
             clickedItemPrice = fourthRiceItemPrice.text!
             clickedItemDescrp = anonymousUser.getItemDescription(itemName: clickedItemName.lowercased())
-            performSegue(withIdentifier: "riceCategoryToDetails", sender: self)
+            performSegue(withIdentifier: "riceToDetails", sender: self)
             break
 
             
@@ -152,7 +152,7 @@ class riceCategoryViewController: UIViewController {
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "riceCategoryToDetails" {
+        if segue.identifier == "riceToDetails" {
             let DestViewController : detailsViewController = segue.destination as! detailsViewController
             DestViewController.itemName = clickedItemName
             DestViewController.image = clickedItemImage

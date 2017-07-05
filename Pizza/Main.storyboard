@@ -706,7 +706,7 @@
                         <outlet property="thirdRiceItemName" destination="V0G-J2-fc1" id="DwD-eM-65u"/>
                         <outlet property="thirdRiceItemPrice" destination="njF-od-AUG" id="YZZ-WP-VVP"/>
                         <outlet property="totalItemsInCart" destination="WjL-ZY-QTR" id="Rd0-Qr-0Jh"/>
-                        <segue destination="Xuh-YM-bl8" kind="show" identifier="riceCategoryToDetails" id="IW2-uc-MLa"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="riceToDetails" id="IW2-uc-MLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFP-GD-qnu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -767,8 +767,8 @@
                                                     <constraint firstAttribute="width" constant="50" id="ZzH-Fe-CK9"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-9O-k39">
-                                                <rect key="frame" x="159.5" y="7" width="57" height="36"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-9O-k39">
+                                                <rect key="frame" x="149.5" y="7" width="77.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -969,6 +969,11 @@
                         <outlet property="itemPriceLabel" destination="y7c-b6-Jxf" id="Egj-Fz-4bT"/>
                         <outlet property="totalItemsInCart" destination="0xj-wl-TaF" id="2CW-xE-LG4"/>
                         <segue destination="3w2-SB-Oql" kind="show" identifier="detailsToRice" id="gFg-Kz-xEN"/>
+                        <segue destination="pgh-Zo-xf5" kind="show" identifier="detailsToStew" id="e3V-0f-n8a"/>
+                        <segue destination="lGS-ZL-IYi" kind="show" identifier="detailsToSwallow" id="NsK-P4-kaj"/>
+                        <segue destination="STz-sE-Pa0" kind="show" identifier="detailsToSoup" id="B0x-Tw-F5D"/>
+                        <segue destination="f5F-yB-Ts6" kind="show" identifier="detailsToPizza" id="6Qk-Qo-5pb"/>
+                        <segue destination="A7R-5j-QEq" kind="show" identifier="detailsToDrinks" id="Q8v-o9-T3I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goR-DN-q00" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1180,7 +1185,11 @@
                         <segue destination="lGS-ZL-IYi" kind="presentation" id="Ra5-ie-ntd"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="Zih-BM-f7b"/>
+                <tapGestureRecognizer id="Zih-BM-f7b">
+                    <connections>
+                        <segue destination="STz-sE-Pa0" kind="presentation" id="9xa-zM-TbD"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="crB-bI-rHr">
                     <connections>
                         <segue destination="f5F-yB-Ts6" kind="presentation" id="u4z-sd-PBw"/>
@@ -1324,6 +1333,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion1">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="pgh-Zo-xf5" eventType="touchUpInside" id="9Op-hL-3h5"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1422,6 +1434,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion2">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="pgh-Zo-xf5" eventType="touchUpInside" id="u1s-ZA-mCc"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1548,6 +1563,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion3">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="pgh-Zo-xf5" eventType="touchUpInside" id="Aol-9V-omB"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1683,6 +1701,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion4">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="pgh-Zo-xf5" eventType="touchUpInside" id="TkN-Nb-sa7"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1885,6 +1906,7 @@
                         <outlet property="thirdStewItemName" destination="bCj-3x-Qjf" id="vFi-IO-tYJ"/>
                         <outlet property="thirdStewItemPrice" destination="xoe-Ke-8Gh" id="qhY-H3-TnE"/>
                         <outlet property="totalItemsInCart" destination="qOq-Ht-HuR" id="7bn-uJ-aXZ"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="stewToDetails" id="k79-Wp-kFN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IHP-dB-Jm0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2035,6 +2057,9 @@
                                                         <state key="normal" title="itemDetailPageButtion1">
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClick_foodItemImage:" destination="lGS-ZL-IYi" eventType="touchUpInside" id="9vi-jh-vrB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2125,6 +2150,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion2">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="lGS-ZL-IYi" eventType="touchUpInside" id="qyM-Mf-wbT"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2251,6 +2279,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion3">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="lGS-ZL-IYi" eventType="touchUpInside" id="u1Q-KU-Mib"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2386,6 +2417,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion4">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="lGS-ZL-IYi" eventType="touchUpInside" id="e7q-cc-sTf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2588,6 +2622,7 @@
                         <outlet property="thirdSwallowItemName" destination="Qfl-s9-fVE" id="R1A-oh-tcV"/>
                         <outlet property="thirdSwallowItemPrice" destination="4HM-oC-aut" id="eBO-b9-4AN"/>
                         <outlet property="totalItemsInCart" destination="DwH-Z0-sU6" id="psY-s4-n6C"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="swallowToDetails" id="IeC-xf-ZaH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVg-ml-oNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2737,6 +2772,9 @@
                                                         <state key="normal" title="itemDetailPageButtion1">
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClick_foodItemImage:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="Axa-X1-XnZ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2827,6 +2865,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion2">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="gwg-rW-IEM"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2953,6 +2994,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion3">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="WF1-KT-eP5"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -3088,6 +3132,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion4">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="f5F-yB-Ts6" eventType="touchUpInside" id="XEP-7R-IVn"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -3290,6 +3337,7 @@
                         <outlet property="thirdPizzaItemName" destination="9uy-61-3WP" id="jGq-Sk-gd3"/>
                         <outlet property="thirdPizzaItemPrice" destination="NXm-mZ-dxh" id="U12-Cm-DXw"/>
                         <outlet property="totalItemsInCart" destination="h9d-hC-KnR" id="Tyq-nk-Cbv"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="pizzaToDetails" id="mSl-il-fJZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd0-1K-jzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3439,6 +3487,9 @@
                                                         <state key="normal" title="itemDetailPageButtion1">
                                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onClick_foodItemImage:" destination="A7R-5j-QEq" eventType="touchUpInside" id="HAh-3K-08p"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3529,6 +3580,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion2">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="A7R-5j-QEq" eventType="touchUpInside" id="K1d-w0-smF"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -3655,6 +3709,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion3">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="A7R-5j-QEq" eventType="touchUpInside" id="3jr-1p-4fS"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -3790,6 +3847,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion4">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="A7R-5j-QEq" eventType="touchUpInside" id="KpE-Da-wy9"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -3992,6 +4052,7 @@
                         <outlet property="thirdDrinkItemName" destination="vov-5S-NXp" id="cgr-re-s0p"/>
                         <outlet property="thirdDrinkItemPrice" destination="V4E-sv-mB3" id="xzD-s7-iqH"/>
                         <outlet property="totalItemsInCart" destination="yqC-e6-Bd8" id="LFO-55-ZAS"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="drinksToDetails" id="4aO-9o-mDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lni-di-4xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4609,6 +4670,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion1">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="STz-sE-Pa0" eventType="touchUpInside" id="L4C-R1-9M6"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -4711,6 +4775,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion2">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="STz-sE-Pa0" eventType="touchUpInside" id="8W8-a9-jCA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -4841,6 +4908,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion3">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="STz-sE-Pa0" eventType="touchUpInside" id="gPW-Xo-aVg"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -4980,6 +5050,9 @@
                                                                 <state key="normal" title="itemDetailPageButtion4">
                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="onClick_foodItemImage:" destination="STz-sE-Pa0" eventType="touchUpInside" id="BsO-kQ-eyW"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -5182,6 +5255,7 @@
                         <outlet property="thirdSoupItemName" destination="CsI-Qk-Fg7" id="UQm-iV-CJT"/>
                         <outlet property="thirdSoupItemPrice" destination="X4H-6S-gE5" id="j5c-ss-jpm"/>
                         <outlet property="totalItemsInCart" destination="mXA-IX-NUx" id="CQM-L0-b4a"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="soupToDetails" id="d5o-CQ-GNN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bN-36-1HP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5648,12 +5722,18 @@
         <image name="vegetable_stew" width="4272" height="2848"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kSx-m8-Hag"/>
-        <segue reference="pJF-ct-AlQ"/>
-        <segue reference="IN3-t0-TRE"/>
-        <segue reference="hY4-5a-zdN"/>
         <segue reference="eq3-pk-Fwn"/>
+        <segue reference="pJF-ct-AlQ"/>
+        <segue reference="6cb-de-GZS"/>
+        <segue reference="O9t-cD-IXB"/>
+        <segue reference="mWI-D8-fz1"/>
+        <segue reference="4aO-9o-mDi"/>
         <segue reference="ONx-jR-fcU"/>
-        <segue reference="gFg-Kz-xEN"/>
+        <segue reference="kSx-m8-Hag"/>
+        <segue reference="U5s-3N-mnW"/>
+        <segue reference="kTA-eo-wWa"/>
+        <segue reference="Ra5-ie-ntd"/>
+        <segue reference="u4z-sd-PBw"/>
+        <segue reference="5vf-Je-SKf"/>
     </inferredMetricsTieBreakers>
 </document>

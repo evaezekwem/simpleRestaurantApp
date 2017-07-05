@@ -33,6 +33,22 @@ let itemsDescription : [String:String] = [
 "banga stew":"Also known as 'Ofe Akwu' is a palm nut stew that is native to the Igbos in Nigeria. It is similar to the Efik's Banga Soup",
 "vegetable stew":"It is a type of stew with alot of vegetable (pumpkin) in it. It is usually common among vegetarians.",
 "sauce stew":"It is a highly proteinous dish with assorted meats, vegetables and spices. Some chef include irish potatoes as well.",
+"eba":"Ẹbà is a Nigerian staple food eaten in West African subregion and beyond. It is made from dried grated cassava (manioc) flour, commonly known as garri. ... Gari is very rich in starch and carbohydrate. It is quite heavy as a meal and a staple food of the western Nigerians.",
+"fufu":"Fufu (variants of the name include foofoo, fufuo, foufou) is a staple food, common in many countries in Africa. It is often made with cassava and green Plantain Flour. Other flours, such as semolina, maize flour or mashed plantains may take the place of cassava flour.",
+"semo":"Semolina is the coarse, purified wheat middlings of durum wheat mainly used in making pasta ... Semolina is derived from the Italian word semola, meaning 'bran' . ... Broadly speaking, meal produced from grains other than wheat may also be referred to as semolina, e.g. rice semolina, or corn semolina",
+"amala":"Àmàlà is a Nigerian food made out of yam and/or cassava flour. Yams are peeled , sliced, cleaned, dried and then blended into a flour, also called elubo.",
+"lekki pizza":"A type of pizza peculiar to residents of Lekki area of Lagos state in Nigeria.",
+"ikeja pizza":"A type of pizza peculiar to residents of Ikeja area of Lagos state in Nigeria",
+"yaba pizza":"A type of pizza peculiar to residents of Yaba area of Lagos state in Nigeria",
+"ojuelegba pizza":"A type of pizza peculiar to residents of Ojuelegba area of Lagos state in Nigeria",
+"egusi soup":"Egusi seeds are the fat- and protein-rich seeds of certain cucurbitaceous (squash, melon, gourd) plants. Egusi soup is common and prevalent across Central Africa, and may be served atop rice, cooked vegetables or grilled meat, such as goat, chicken, beef or fish.",
+"okro soup":"Okra soup is prepared using the edible green seed pods of the okra flowering plant as a primary ingredient. It is greenish in colour. Okra has a slippery feel when rubbed with the fingers. The edible green seed pods can also be used in stews",
+"ogbono soup":"Similar to okro soup but usually prepare with Ogbono seeds, water, oil, leaf vegetables (bitterleaf and celosia), other vegetables, seasonings, meat.",
+"eforiro soup":"Ẹ̀fọ́ riro is a Yorùbá cuisine prepared with vegetables and stockfish, palm oil, crayfish, pepper, locust bean and may also include meat and other ingredients.",
+"coca-cola":"The most popular drink on earth after water",
+"malt":"Malta is a lightly carbonated malt beverage, brewed from barley, hops, and water much like beer; corn and caramel color may also be added. ... It has a strong beer after smell from the breath an",
+"bottled water":"Water is the most popular drink on earth. You probably knew this already.",
+"beer":"The drinks that make men forget their sorrows for a while and some behave like kids in the process"
 ]
 
 //converts menuList to array of all menu items without price tags
@@ -144,7 +160,12 @@ class Order {
     }
     
     func getItemDescription(itemName: String) -> String {
-        return itemsDescription[itemName]!
+        
+         if itemsDescription.index(forKey: itemName) != nil {
+            return itemsDescription[itemName]!
+        }
+    
+    return ""
     }
     
     
