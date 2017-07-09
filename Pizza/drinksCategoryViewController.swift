@@ -152,6 +152,11 @@ class drinksViewController: UIViewController {
         performSegue(withIdentifier: "drinksToOrderSummary", sender: self)
     }
     
+    @IBAction func onClick_Search(_ sender: UIButton) {
+        performSegue(withIdentifier: "drinksToSearch", sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "drinksToDetails" {
@@ -165,7 +170,12 @@ class drinksViewController: UIViewController {
             
             let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
             DestViewController.previousSegue = "orderSummaryToDrinks"
+            
+        } else if segue.identifier == "drinksToSearch" {
+            let DestViewController : searchViewController = segue.destination as! searchViewController
+            DestViewController.previousSegue = "searchToDrinks"
         }
+
     }
     
 }

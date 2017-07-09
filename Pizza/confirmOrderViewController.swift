@@ -16,7 +16,7 @@ class confirmOrderViewController: UIViewController, UITableViewDataSource {
     var quantity: [Int] = Array(anonymousUser.itemsInCart.values)
     
     
-    
+    var name = ""
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,7 +56,7 @@ class confirmOrderViewController: UIViewController, UITableViewDataSource {
         if anonymousUser.userIsLoggedIn {
         nameLabel.text = "Hi \(loggedInUser.userName), kindly confirm your order"
         } else {
-            nameLabel.text = "Hi \(Globals.shared.deliveryDetailToConfirmPage_Name), kindly confirm your order"
+            nameLabel.text = "Hi \(name), kindly confirm your order"
         }
         
         

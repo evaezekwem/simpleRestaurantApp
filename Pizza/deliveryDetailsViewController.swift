@@ -50,6 +50,17 @@ class deliveryDetailsViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "deliveryDetailsToConfirmOrder" {
+            let DestViewController : confirmOrderViewController = segue.destination as! confirmOrderViewController
+            DestViewController.name = nameTextField.text!
+    
+        }
+    }
+
+    
+    
     func isValidPhoneNo(userPhone: String) -> Bool {
         let phoneRegEx = "^\\d{11}$"
         return NSPredicate(format: "SELF MATCHES %@", phoneRegEx).evaluate(with: userPhone)

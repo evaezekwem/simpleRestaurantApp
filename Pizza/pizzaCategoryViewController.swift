@@ -150,6 +150,11 @@ class pizzaCategoryViewController: UIViewController {
         performSegue(withIdentifier: "pizzaToOrderSummary", sender: self)
     }
     
+    @IBAction func onClick_Search(_ sender: UIButton) {
+        performSegue(withIdentifier: "pizzaToSearch", sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "pizzaToDetails" {
@@ -165,7 +170,12 @@ class pizzaCategoryViewController: UIViewController {
             
             let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
             DestViewController.previousSegue = "orderSummaryToPizza"
+            
+        }else if segue.identifier == "pizzaToSearch" {
+            let DestViewController : searchViewController = segue.destination as! searchViewController
+            DestViewController.previousSegue = "searchToPizza"
         }
+
     }
     
 }

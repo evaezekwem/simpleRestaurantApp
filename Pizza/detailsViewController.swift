@@ -61,11 +61,22 @@ class detailsViewController: UIViewController {
         performSegue(withIdentifier: "detailsToOrderSummary", sender: self)
     }
     
+    @IBAction func onClick_Search(_ sender: UIButton) {
+        performSegue(withIdentifier: "detailsToSearch", sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailsToOrderSummary" {
             let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
             DestViewController.previousSegue = "orderSummaryToMenuCategory"
+            
+        } else if segue.identifier == "detailsToSearch" {
+            let DestViewController : searchViewController = segue.destination as! searchViewController
+            DestViewController.previousSegue = "searchToMenu"
+            
         }
+
        
     }
 

@@ -152,6 +152,11 @@ class riceCategoryViewController: UIViewController {
     }
     
     
+    @IBAction func onClick_Search(_ sender: UIButton) {
+        performSegue(withIdentifier: "riceToSearch", sender: self)
+    }
+    
+    
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "riceToDetails" {
@@ -164,6 +169,9 @@ class riceCategoryViewController: UIViewController {
         } else if segue.identifier == "riceToOrderSummary" {
             let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
             DestViewController.previousSegue = "orderSummaryToRice"
+        } else if segue.identifier == "riceToSearch" {
+            let DestViewController : searchViewController = segue.destination as! searchViewController
+            DestViewController.previousSegue = "searchToRice"
         }
     }
  

@@ -18,6 +18,7 @@ class registrationViewController: UIViewController {
     @IBOutlet weak var deliveryAddress: UITextField!
     @IBOutlet weak var phone: UITextField!
     
+    var finalEmail = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class registrationViewController: UIViewController {
     
     @IBAction func onClick_Register(_ sender: UIButton) {
         let finalName = name.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        let finalEmail = email.text!.lowercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        finalEmail = email.text!.lowercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let finalDeliveryAddress = deliveryAddress.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let  phoneNo = phone.text!.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
@@ -79,8 +80,8 @@ class registrationViewController: UIViewController {
             let status = anonymousUser.registerUser(inputName: finalName, inputEmail: finalEmail, inputPassword: finalPassword!, inputPhone: finalPhone, inputDeliveryAddress: finalDeliveryAddress)
             if status && !finalName.isEmpty && finalName != "Name:" && !finalEmail.isEmpty && finalEmail != "email:" && isValidEmail(userEmail: finalEmail) && !(password.text?.isEmpty)! && password.text != "Password:" && !finalDeliveryAddress.isEmpty && finalDeliveryAddress != "Delivery Address:" && !phoneNo.isEmpty && phoneNo != "070345345434" && isValidPhoneNo(userPhone: phoneNo) {
             
-                Globals.shared.registrationToLogin_Email = finalEmail
-                Globals.shared.registrationToLogin_Pass = password.text!
+                //Globals.shared.registrationToLogin_Email = finalEmail
+                //Globals.shared.registrationToLogin_Pass = password.text!
                 
                 performSegue(withIdentifier: "registrationToLogin", sender: self)
                 
@@ -95,6 +96,16 @@ class registrationViewController: UIViewController {
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "registrationToLogin" {
+            let DestViewController : loginViewController = segue.destination as! loginViewController
+            DestViewController.email = finalEmail
+            DestViewController.password = password.text!
+        }
+    }
+
     
     func isValidEmail(userEmail: String) -> Bool {
         let emailRegEx = "[A-Za-z0-9.%+-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"

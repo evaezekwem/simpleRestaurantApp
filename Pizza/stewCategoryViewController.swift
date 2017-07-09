@@ -156,6 +156,11 @@ class stewViewController: UIViewController {
     @IBAction func onClick_Cart(_ sender: UIButton) {
         performSegue(withIdentifier: "stewToOrderSummary", sender: self)
     }
+    
+    @IBAction func onClick_Search(_ sender: UIButton) {
+        performSegue(withIdentifier: "stewToSearch", sender: self)
+    }
+    
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -172,7 +177,14 @@ class stewViewController: UIViewController {
    
             let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
             DestViewController.previousSegue = "orderSummaryToStew"
+            
+        } else if segue.identifier == "stewToSearch" {
+            
+            let DestViewController : searchViewController = segue.destination as! searchViewController
+            DestViewController.previousSegue = "searchToStew"
+            
         }
+
     }
 
 }

@@ -14,12 +14,13 @@ class loginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
     
-    
-
+    var email = "Email:"
+    var password = "Password:"
+    var finalEmail = ""
     
     @IBAction func onClick_login(_ sender: UIButton) {
         
-        let finalEmail = emailTextField.text!.lowercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        finalEmail = emailTextField.text!.lowercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if finalEmail.isEmpty || finalEmail == "email:" || !isValidEmail(userEmail: finalEmail){
             messageLabel.text = "Please enter a valid email"
         }
@@ -44,8 +45,8 @@ class loginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailTextField.text = Globals.shared.registrationToLogin_Email
-        passwordTextField.text = Globals.shared.registrationToLogin_Pass
+        emailTextField.text = finalEmail
+        passwordTextField.text = password
         
     }
 

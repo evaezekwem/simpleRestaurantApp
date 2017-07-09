@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92942DADAB65F23FEA41CAE8 /* Pods_Pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAF14262ECEE3FFFCE68E0C /* Pods_Pizza.framework */; };
+		A6098F3D1F113DEC00F99EB3 /* searchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6098F3C1F113DEC00F99EB3 /* searchViewController.swift */; };
 		A64082A61F046B410069328C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64082A51F046B410069328C /* loginViewController.swift */; };
 		A64DD6351F06970B00DDA61D /* orderSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DD6341F06970B00DDA61D /* orderSummaryViewController.swift */; };
 		A65259A31F025BE7009217E1 /* swallowCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65259A21F025BE7009217E1 /* swallowCategoryViewController.swift */; };
@@ -65,6 +66,7 @@
 		4BCCDEC358838B805ABC25BE /* Pods-PizzaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaTests/Pods-PizzaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		82CD0774C211ACFBD0150FE5 /* Pods-Pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pizza/Pods-Pizza.release.xcconfig"; sourceTree = "<group>"; };
 		98C0A8B94B86B6D7EE212709 /* Pods_PizzaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6098F3C1F113DEC00F99EB3 /* searchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchViewController.swift; sourceTree = "<group>"; };
 		A64082A51F046B410069328C /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		A64DD6341F06970B00DDA61D /* orderSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orderSummaryViewController.swift; sourceTree = "<group>"; };
 		A65259A21F025BE7009217E1 /* swallowCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swallowCategoryViewController.swift; sourceTree = "<group>"; };
@@ -153,10 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				A6F2D9211F01D879004CDD4B /* app */,
-				A6F2D9221F01D88E004CDD4B /* view controllers */,
-				A6F2D9231F01D8DB004CDD4B /* storyboards */,
+				A6F2D9221F01D88E004CDD4B /* Controllers */,
+				A6F2D9231F01D8DB004CDD4B /* Views */,
 				A6F2D8FD1F01D1EE004CDD4B /* Assets.xcassets */,
-				A6F2D9261F01D9F2004CDD4B /* core classes */,
+				A6F2D9261F01D9F2004CDD4B /* Models */,
 				A6F2D9021F01D1EE004CDD4B /* Info.plist */,
 			);
 			path = Pizza;
@@ -179,7 +181,7 @@
 			name = app;
 			sourceTree = "<group>";
 		};
-		A6F2D9221F01D88E004CDD4B /* view controllers */ = {
+		A6F2D9221F01D88E004CDD4B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A6F2D92B1F01E47A004CDD4B /* menuCategoryViewController.swift */,
@@ -196,27 +198,28 @@
 				A6741F9E1F081CEF004CB07D /* orderSuccessfulViewController.swift */,
 				A6741FA01F082A0C004CB07D /* deliveryDetailsViewController.swift */,
 				A6AED0521F0B55A40058725C /* detailsViewController.swift */,
+				A6098F3C1F113DEC00F99EB3 /* searchViewController.swift */,
 			);
-			name = "view controllers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		A6F2D9231F01D8DB004CDD4B /* storyboards */ = {
+		A6F2D9231F01D8DB004CDD4B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A6F2D91F1F01D698004CDD4B /* Main.storyboard */,
 				A6F2D91D1F01D4E3004CDD4B /* LaunchScreen.storyboard */,
 			);
-			name = storyboards;
+			name = Views;
 			sourceTree = "<group>";
 		};
-		A6F2D9261F01D9F2004CDD4B /* core classes */ = {
+		A6F2D9261F01D9F2004CDD4B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A6F2D9241F01D9DD004CDD4B /* Order.swift */,
 				A6F2D9271F01DA3F004CDD4B /* User.swift */,
 				A6741FA31F0845CF004CB07D /* Globals.swift */,
 			);
-			name = "core classes";
+			name = Models;
 			sourceTree = "<group>";
 		};
 		DAE4587ECF88733DC12D1BB2 /* Frameworks */ = {
@@ -448,6 +451,7 @@
 				A65259A91F026E67009217E1 /* drinksCategoryViewController.swift in Sources */,
 				A64082A61F046B410069328C /* loginViewController.swift in Sources */,
 				A6F2D8F71F01D1EE004CDD4B /* AppDelegate.swift in Sources */,
+				A6098F3D1F113DEC00F99EB3 /* searchViewController.swift in Sources */,
 				A65259AB1F0278FD009217E1 /* registrationViewController.swift in Sources */,
 				A65259A71F026AEF009217E1 /* pizzaCategoryViewController.swift in Sources */,
 				A6741FA41F0845CF004CB07D /* Globals.swift in Sources */,

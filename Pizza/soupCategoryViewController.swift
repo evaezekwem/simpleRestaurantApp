@@ -162,6 +162,12 @@ class soupCategoryViewController: UIViewController {
         
     }
     
+    @IBAction func onClick_Search(_ sender: UIButton) {
+        performSegue(withIdentifier: "soupToSearch", sender: self)
+    }
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "soupToDetails" {
@@ -177,7 +183,12 @@ class soupCategoryViewController: UIViewController {
             
             let DestViewController : orderSummaryViewController = segue.destination as! orderSummaryViewController
             DestViewController.previousSegue = "orderSummaryToSoup"
+            
+        } else if segue.identifier == "soupToSearch" {
+            let DestViewController : searchViewController = segue.destination as! searchViewController
+            DestViewController.previousSegue = "searchToSoup"
         }
+
     }
     
 }
