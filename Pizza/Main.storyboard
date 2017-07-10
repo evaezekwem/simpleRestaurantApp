@@ -892,7 +892,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8g-3e-20i" userLabel="Menu Category Button">
                                                         <rect key="frame" x="0.0" y="0.0" width="58.5" height="45"/>
                                                         <connections>
-                                                            <segue destination="UAC-xu-0B7" kind="popoverPresentation" popoverAnchorView="Y8g-3e-20i" id="1Rk-dC-F2T">
+                                                            <segue destination="UAC-xu-0B7" kind="popoverPresentation" identifier="detailsToMenu" popoverAnchorView="Y8g-3e-20i" id="1Rk-dC-F2T">
                                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                             </segue>
                                                         </connections>
@@ -4177,7 +4177,7 @@
         <!--Order Summary View Controller-->
         <scene sceneID="Had-KC-quX">
             <objects>
-                <viewController id="2s6-c7-Twd" customClass="orderSummaryViewController" customModule="Pizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="2s6-c7-Twd" customClass="orderSummaryViewController" customModule="Pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jgf-8a-w4h"/>
                         <viewControllerLayoutGuide type="bottom" id="J9B-CZ-jpA"/>
@@ -4288,12 +4288,13 @@
                         <segue destination="STz-sE-Pa0" kind="show" identifier="orderSummaryToSoup" id="AGF-9e-kSO"/>
                         <segue destination="f5F-yB-Ts6" kind="show" identifier="orderSummaryToPizza" id="fwW-1f-8EH"/>
                         <segue destination="A7R-5j-QEq" kind="show" identifier="orderSummaryToDrinks" id="TlN-xi-mFm"/>
-                        <segue destination="UAC-xu-0B7" kind="show" identifier="orderSummaryToMenuCategory" id="ibY-M9-kEa"/>
+                        <segue destination="UAC-xu-0B7" kind="show" identifier="orderSummaryToMenu" id="ibY-M9-kEa"/>
+                        <segue destination="xuK-n7-65m" kind="show" identifier="orderSummaryToSearch" id="9jb-cO-hoz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL4-KO-fW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2291" y="1813"/>
+            <point key="canvasLocation" x="-2749" y="1813"/>
         </scene>
         <!--Delivery Details-->
         <scene sceneID="WiC-UR-C49">
@@ -5857,11 +5858,14 @@
                                                             <constraint firstItem="8MQ-Io-Ffl" firstAttribute="leading" secondItem="hOq-oQ-fYG" secondAttribute="leading" id="xs2-8P-aMu"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type name to search" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg5-2D-ZKp">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type name to search" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg5-2D-ZKp">
                                                         <rect key="frame" x="64" y="10" width="301" height="30"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="textFieldChanged:" destination="xuK-n7-65m" eventType="editingChanged" id="8kP-er-uI7"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.38646466530000001" blue="0.13565263459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5876,7 +5880,7 @@
                                                     <constraint firstItem="hOq-oQ-fYG" firstAttribute="leading" secondItem="cmc-bY-kmF" secondAttribute="leading" id="x8I-ST-yQ1"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-Vu-OGP" customClass="SCNView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-Vu-OGP">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="250"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8z-xf-wlk">
@@ -6531,10 +6535,10 @@
                         <outlet property="firstItemNameLabel" destination="rwg-sJ-fhO" id="ZiT-YX-l9K"/>
                         <outlet property="firstItemPriceLabel" destination="lq1-os-I5O" id="oSo-Py-KvJ"/>
                         <outlet property="firstView" destination="Pt2-Vu-OGP" id="D0o-lk-sfe"/>
+                        <outlet property="fourthItemImage" destination="hQC-MS-dxM" id="Xpb-sx-Y2t"/>
+                        <outlet property="fourthItemNameLabel" destination="QZg-I9-1YS" id="e1B-qi-og1"/>
+                        <outlet property="fourthItemPriceLabel" destination="uuW-S6-UKm" id="c9t-5b-suM"/>
                         <outlet property="fourthView" destination="WR7-Hu-8PJ" id="OBj-R0-oI4"/>
-                        <outlet property="fouthItemImage" destination="hQC-MS-dxM" id="v43-z1-UQt"/>
-                        <outlet property="fouthItemNameLabel" destination="QZg-I9-1YS" id="hAG-63-YuZ"/>
-                        <outlet property="fouthItemPriceLabel" destination="uuW-S6-UKm" id="mgu-Ar-YRE"/>
                         <outlet property="searchTextField" destination="gg5-2D-ZKp" id="Ln9-mz-Sb8"/>
                         <outlet property="secondItemImage" destination="DhS-va-ymV" id="5LB-EI-9Wn"/>
                         <outlet property="secondItemNameLabel" destination="haW-0g-Nic" id="hpU-QZ-fKh"/>
@@ -6550,14 +6554,20 @@
                         <segue destination="lGS-ZL-IYi" kind="show" identifier="searchToSwallow" id="MX4-ew-vzW"/>
                         <segue destination="STz-sE-Pa0" kind="show" identifier="searchToSoup" id="yDr-VQ-9x6"/>
                         <segue destination="f5F-yB-Ts6" kind="show" identifier="searchToPizza" id="fkX-YZ-byE"/>
-                        <segue destination="A7R-5j-QEq" kind="show" id="Ie0-LW-kEy"/>
+                        <segue destination="A7R-5j-QEq" kind="show" identifier="searchToDrinks" id="Ie0-LW-kEy"/>
                         <segue destination="UAC-xu-0B7" kind="show" identifier="searchToMenu" id="40D-Xb-aTZ"/>
+                        <segue destination="2s6-c7-Twd" kind="show" identifier="searchToOrderSummary" id="5qh-SL-oVs"/>
+                        <segue destination="Xuh-YM-bl8" kind="show" identifier="searchToDetails" id="P6Y-qe-sZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9K2-fz-OAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="qSH-l5-dva"/>
+                <tapGestureRecognizer id="qSH-l5-dva">
+                    <connections>
+                        <segue destination="UAC-xu-0B7" kind="show" identifier="searchToMenu" id="Vvi-l7-o9o"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2297.8125" y="540.625"/>
+            <point key="canvasLocation" x="2523" y="541"/>
         </scene>
     </scenes>
     <resources>
@@ -6596,19 +6606,19 @@
         <image name="vegetable_stew" width="4272" height="2848"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fkX-YZ-byE"/>
-        <segue reference="CRR-uh-31p"/>
-        <segue reference="IW2-uc-MLa"/>
-        <segue reference="Y98-Zm-GFv"/>
-        <segue reference="Q7p-2g-t5d"/>
+        <segue reference="0uC-gz-4uF"/>
+        <segue reference="vOf-cA-W9W"/>
         <segue reference="pJF-ct-AlQ"/>
+        <segue reference="eq3-pk-Fwn"/>
         <segue reference="ONx-jR-fcU"/>
         <segue reference="kSx-m8-Hag"/>
-        <segue reference="eq3-pk-Fwn"/>
-        <segue reference="yDr-VQ-9x6"/>
-        <segue reference="40D-Xb-aTZ"/>
-        <segue reference="MX4-ew-vzW"/>
-        <segue reference="cM0-3w-ADQ"/>
-        <segue reference="Ie0-LW-kEy"/>
+        <segue reference="TlN-xi-mFm"/>
+        <segue reference="AGF-9e-kSO"/>
+        <segue reference="9jb-cO-hoz"/>
+        <segue reference="fwW-1f-8EH"/>
+        <segue reference="ZBi-rX-DNs"/>
+        <segue reference="ibY-M9-kEa"/>
+        <segue reference="NI1-VW-Y02"/>
+        <segue reference="P6Y-qe-sZM"/>
     </inferredMetricsTieBreakers>
 </document>

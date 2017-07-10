@@ -22,7 +22,7 @@ class detailsViewController: UIViewController {
     var itemPrice: String = String()
     var itemDescrip: String = String()
 
-    var previousSegue: String = String()
+    var previousSegue: String = "detailsToMenu"
     
     
     

@@ -24,6 +24,18 @@ let menuListWithoutCategories : [String:Int] = [
     "coca-cola":100, "malt":150, "bottled water":50, "beer":250
 ]
 
+let menuListWithImages : [String:UIImage] = [
+    "jollof rice":#imageLiteral(resourceName: "jollof_rice"), "ofada rice": #imageLiteral(resourceName: "ofada_rice"), "fried rice":#imageLiteral(resourceName: "fried_rice"), "coconut rice":#imageLiteral(resourceName: "coconut_rice"),
+    "tomato stew":#imageLiteral(resourceName: "tomatoe_stew"), "banga stew":#imageLiteral(resourceName: "banga_stew"), "vegetable stew": #imageLiteral(resourceName: "vegetable_stew"), "sauce stew":#imageLiteral(resourceName: "sauce_stew"),
+    "eba":#imageLiteral(resourceName: "eba"), "fufu":#imageLiteral(resourceName: "fufu"), "semo":#imageLiteral(resourceName: "semo"), "amala":#imageLiteral(resourceName: "amala"),
+    "lekki pizza":#imageLiteral(resourceName: "pizza1_ojotapizza"), "ikeja pizza":#imageLiteral(resourceName: "pizza2_chicago"), "yaba pizza":#imageLiteral(resourceName: "pizza3_newyork"), "ojuelegba pizza":#imageLiteral(resourceName: "pizza4_greek"),
+    "egusi soup":#imageLiteral(resourceName: "egusi_soup"), "okro soup":#imageLiteral(resourceName: "okro_soup"), "ogbono soup":#imageLiteral(resourceName: "ogbono_soup2"), "eforiro soup":#imageLiteral(resourceName: "eforiro_soup"),
+    "coca-cola":#imageLiteral(resourceName: "coke"), "malt":#imageLiteral(resourceName: "malt"), "bottled water":#imageLiteral(resourceName: "bottled_water"), "beer":#imageLiteral(resourceName: "beer")
+]
+
+
+
+
 let itemsDescription : [String:String] = [
 "jollof rice":"The dish consists of rice, tomatoes and tomato paste, onions, salt, spices and chili peppers; optional ingredients can be added such as vegetables, meats, or fish. Due to the tomato paste and palm oil the dish is always red in color.",
 "ofada rice":"Ofada rice is a name for a heritage variety of rice grown in south-west Nigeria. It is grown almost exclusively in Ogun State, a state in Southwestern Nigeria. It is named after the town Ofada in Ogun State. Ofada rices are mostly blends, and are not indigenous to Africa. It is often served with a vegetable stew.",
@@ -139,8 +151,10 @@ class Order {
         
         for item in menuListWithoutCategories.keys {
             
+            let foodFirstName = item.components(separatedBy: " ")
+            
             //Checks for an exact match
-            if itemName == item {
+            if itemName == item || itemName == foodFirstName[0] {
                 searchResult[item] = menuListWithoutCategories[item]
                 return searchResult
             }
@@ -156,6 +170,14 @@ class Order {
             
         }
         
+     /*   for item in menuListSeachOnly.keys {
+            //checks for exact single word match
+            if itemName == item {
+                searchResult[item] = menuListSeachOnly[item]
+                return searchResult
+            }
+        }
+     */
         return searchResult
     }
     

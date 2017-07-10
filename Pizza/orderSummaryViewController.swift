@@ -16,7 +16,7 @@ class orderSummaryViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var messageLabel: UILabel!
     
-     var previousSegue: String = String()
+     var previousSegue: String = "orderSummaryToMenu"
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
