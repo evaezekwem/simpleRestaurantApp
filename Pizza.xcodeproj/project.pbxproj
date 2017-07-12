@@ -21,7 +21,6 @@
 		A6741FA11F082A0C004CB07D /* deliveryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6741FA01F082A0C004CB07D /* deliveryDetailsViewController.swift */; };
 		A6741FA41F0845CF004CB07D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6741FA31F0845CF004CB07D /* Globals.swift */; };
 		A6AED0531F0B55A40058725C /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AED0521F0B55A40058725C /* detailsViewController.swift */; };
-		A6C5EA171F160E5500841717 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = A6C5EA161F160E5500841717 /* Readme */; };
 		A6D1CCC81F02044400AE63AD /* stewCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D1CCC71F02044400AE63AD /* stewCategoryViewController.swift */; };
 		A6F2D8F71F01D1EE004CDD4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F2D8F61F01D1EE004CDD4B /* AppDelegate.swift */; };
 		A6F2D8FE1F01D1EE004CDD4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6F2D8FD1F01D1EE004CDD4B /* Assets.xcassets */; };
@@ -80,7 +79,6 @@
 		A6741FA01F082A0C004CB07D /* deliveryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deliveryDetailsViewController.swift; sourceTree = "<group>"; };
 		A6741FA31F0845CF004CB07D /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		A6AED0521F0B55A40058725C /* detailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
-		A6C5EA161F160E5500841717 /* Readme */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Readme; sourceTree = "<group>"; };
 		A6D1CCC71F02044400AE63AD /* stewCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stewCategoryViewController.swift; sourceTree = "<group>"; };
 		A6F2D8F31F01D1EE004CDD4B /* Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F2D8F61F01D1EE004CDD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		A6F2D8EA1F01D1EE004CDD4B = {
 			isa = PBXGroup;
 			children = (
-				A6C5EA161F160E5500841717 /* Readme */,
 				A6F2D8F51F01D1EE004CDD4B /* Pizza */,
 				A6F2D90A1F01D1EE004CDD4B /* PizzaTests */,
 				A6F2D8F41F01D1EE004CDD4B /* Products */,
@@ -327,7 +324,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6C5EA171F160E5500841717 /* Readme in Resources */,
 				A6F2D8FE1F01D1EE004CDD4B /* Assets.xcassets in Resources */,
 				A6F2D9201F01D698004CDD4B /* Main.storyboard in Resources */,
 				A6F2D91E1F01D4E3004CDD4B /* LaunchScreen.storyboard in Resources */,
