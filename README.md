@@ -8,3 +8,4 @@
 ![img6](https://user-images.githubusercontent.com/28124360/28145102-868b22ca-6724-11e7-8e43-e90a19d347f5.png)
 ![img7](https://user-images.githubusercontent.com/28124360/28145104-88560732-6724-11e7-9834-960fd2ac0be4.png)
 ![img8](https://user-images.githubusercontent.com/28124360/28145106-8d16ca22-6724-11e7-847b-8a908571246b.png)
+![simulator screen shot 12 jul 2017 5 13 30 pm](https://user-images.githubusercontent.com/28124360/28145241-8b750598-6725-11e7-9009-33b3e48b76c6.png)
